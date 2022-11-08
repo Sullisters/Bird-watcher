@@ -1,0 +1,12 @@
+:root {
+    --primary: rgb(220, 46, 255);
+    --secondary: red;
+    --tertiary: purple;
+    --lightType: white;
+}
+
+body {
+    background: var(--primary);
+    color: var(--lightType);
+}
+
