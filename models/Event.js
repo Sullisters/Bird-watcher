@@ -5,35 +5,22 @@ class Event extends Model {}
 
 Event.init(
   {
-    name: {
-      type: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
-    date_created: {
+    //siting date is in the YYYY-MM-DD format
+    siting_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
-    bird_species: {
+    location: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
-    bird_colors: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    bird_size: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    bird_diet: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    migration: {
+    weather: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -43,7 +30,7 @@ Event.init(
         model: 'user',
         key: 'id',
       },
-    },
+    }
   },
   {
     sequelize,

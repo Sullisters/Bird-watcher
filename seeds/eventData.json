@@ -1,20 +1,3 @@
 [
-  {
-    "name": "Blue jay",
-    "description": "lives in most of the eastern and central United States",
-    "bird_species": "Cyanocitta cristata",
-	  "bird_colors": "Blue with WHite bellies",
-	  "bird_size": "medium",
-	  "bird_diet": "seeds",
-	  "migration": "Eastern US"
-  },
-  {
-    "name": "Cardinal",
-    "description": "Cardinalidae is a family of New World-endemic passerine birds that consists of cardinals, grosbeaks, and buntings.",
-    "bird_species": "Cardinalidae",
-	  "bird_colors": "Bright Red",
-	  "bird_size": "medium",
-	  "bird_diet": "seeds",
-	  "migration": "Eastern US"
-  }
+
 ]
