@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
-const seedUsers = require('./'); //ADD FILE PATHS
+// const seedUsers = require('./'); //ADD FILE PATHS
 const seedBirds = require('./birdData');
-const seedEvents = require('./') //ADD FILE PATHS
+// const seedEvents = require('./') //ADD FILE PATHS
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
