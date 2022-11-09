@@ -1,0 +1,10 @@
+<h1>Welcome back {{user}}!</h1>
+<h2>All Events</h2>
+{{#each events}}
+    <div class="card">
+        <a href="/event/{{id}}"><p>Location: {{location}}</p></a>
+        <p>Weather: {{weather}}</p>
+        <p>Date: {{date}}</p>
+        <hr>
+    </div>
+{{/each}}

@@ -5,6 +5,10 @@ class Event extends Model {};
 
 Event.init(
     {
+        // title: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
         location: {
             type: DataTypes.STRING,
             allowNull: false,
