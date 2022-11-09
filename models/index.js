@@ -8,9 +8,9 @@ Event.belongsTo(User, {
   onDelete: 'CASCADE'
 });
 
-Friend.belongsTo(User, {
-  foreignKey: 'user_id'
-})
+// Friend.belongsTo(User, {
+//   foreignKey: 'user_id'
+// })
 
 Event.hasMany(Bird, {
   foreignKey: 'event_id',
