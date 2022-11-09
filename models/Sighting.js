@@ -1,26 +1,22 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Event extends Model {};
+class Sighting extends Model {};
 
-Event.init(
+Sighting.init(
     {
-        location: {
+        entry_date: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        weather: {
-            type: DataTypes.STRING,
+        entry_description: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
-        date: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        user_id: {
+        event_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "User",
+                model: 'event',
                 key: 'id',
             },
         },
@@ -30,4 +26,4 @@ Event.init(
     }
 );
 
-module.exports = Event;
+module.exports = Sighting;

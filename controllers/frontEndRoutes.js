@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {User,Event,Bird} = require('../models')
+const {User,Bird,Event} = require('../models')
 
 router.get("/",(req,res)=>{
     res.render("home")
