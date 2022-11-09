@@ -3,14 +3,14 @@ const Bird = require('./Bird');
 const Event = require('./Event');
 const Sighting = require('./Sighting')
 
-User.hasMany(Event, {
+Event.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Event.belongsTo(User, {
+Friend.belongsTo(User, {
   foreignKey: 'user_id'
-});
+})
 
 Event.hasMany(Bird, {
   foreignKey: 'event_id',
