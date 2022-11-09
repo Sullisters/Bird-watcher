@@ -8,18 +8,18 @@ Sighting.init(
         entry_date: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                isDate: true, 
+            }
         },
         entry_description: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        event_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'event',
-                key: 'id',
-            },
-        },
+        entry_location: {
+            type: DataTypes.String,
+            allowNull:false, 
+        }
     },
     {
         sequelize
