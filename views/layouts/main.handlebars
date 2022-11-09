@@ -8,7 +8,23 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header><h3>Here is a header</h3></header>
+    <header><header>
+         {{!-- <div class="" id="logo-card">
+            <img src="" alt="">
+        </div> --}}
+        <h3>
+            <a href="/">Home</a>
+             {{#if logged_in}}
+            <a href="/profile">Profile</a>
+            <button id ="logoutBtn">Logout</button>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        {{!-- home --}}
+        {{!-- login --}}
+        {{!-- logout --}}
+        {{!-- profile --}}
+        </h3></header></header>
     <main>
         {{{body}}}
     </main>
@@ -16,5 +32,6 @@
         <hr>
         <h3>&copy; 2022 Project 6 Group: Devon, Bryan, Jaeger and Philip</h3>
     </footer>
+    <script src="/public/js/logout.js"></script>
 </body>
 </html>
