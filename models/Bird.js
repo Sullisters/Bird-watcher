@@ -7,42 +7,35 @@ Bird.init(
   {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+      validate:{
+        isDate:true,
+      }
     },
     bird_species: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     bird_colors: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     bird_size: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.STRING(30),
     },
     bird_diet: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.STRING(20),
     },
     migration: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    event_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Event',
-        key: 'id',
-      },
+    description: {
+      type: DataTypes.TEXT,
+    },
+    activity: {
+      type: DataTypes.STRING(100),
     },
   },
   {

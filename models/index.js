@@ -8,6 +8,8 @@ Event.belongsTo(User, {
   onDelete: 'CASCADE'
 });
 
+User.hasMany(Event);
+
 // Friend.belongsTo(User, {
 //   foreignKey: 'user_id'
 // })
@@ -21,13 +23,13 @@ Bird.belongsTo(Event, {
   foreignKey: 'event_id'
 });
 
-Event.hasMany(Sighting, {
-  foreignKey: 'event_id',
+Bird.hasMany(Sighting, {
+  foreignKey: 'bird_id',
   onDelete: 'CASCADE'
 });
 
-Sighting.belongsTo(Event, {
-  foreignKey: 'event_id'
+Sighting.belongsTo(Bird, {
+  foreignKey: 'bird_id'
 });
 
 module.exports = { User, Bird, Event, Sighting };
