@@ -4,33 +4,52 @@ const sequelize = require('../config/connection');
 class Bird extends Model {}
 
 Bird.init(
-    {
-        common_name: {
-            type: DataTypes.STRING
-        },
-        species_name: {
-            type: DataTypes.STRING
-        },
-        bird_description: {
-            type: DataTypes.STRING
-        },
-        color: {
-            type: DataTypes.STRING
-        },
-        habitat: {
-            type: DataTypes.STRING
-        },
-        migration_info: {
-            type: DataTypes.STRING
-        },
-        diet: {
-            type: DataTypes.STRING
-        },
+  {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    {
-        sequelize
-    }
+    description: {
+      type: DataTypes.STRING,
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    bird_species: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    bird_colors: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    bird_size: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    bird_diet: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    migration: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    event_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Event',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize
+  }
 );
 
+module.exports = Bird;
 
 module.exports = Bird;
