@@ -13,40 +13,40 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/events');
+        document.location.replace('/events')
       } else {
         alert('Incorrect Email or Password');
       }
     }
   };
   
-const signupForm = document.querySelector('#signup');
-signupForm.addEventListener('submit',e=>{
-    e.preventDefault();
-    console.log("PREVENTED DEFAULT")
+// const signupForm = document.querySelector('#signup');
+// signupForm.addEventListener('submit',e=>{
+//     e.preventDefault();
+//     console.log("PREVENTED DEFAULT")
   
-    const userObj = {
-      email:document.querySelector('#signupEmail').value,
-      name:document.querySelector('#signupName').value,
-      password:document.querySelector('#signupPassword').value
-    }
-    fetch('/api/users/', {
-      method: 'POST',
-      body: JSON.stringify(userObj),
-      headers: { 
-        'Content-Type': 'application/json' 
-      },
-    }).then(res=>{
-        if(res.ok){
-        location.reload();
-      } else {
-        alert('Failed to sign up.');
-      }
-    })
-})
+//     const userObj = {
+//       email:document.querySelector('#signupEmail').value,
+//       name:document.querySelector('#signupName').value,
+//       password:document.querySelector('#signupPassword').value
+//     }
+//     fetch('/api/users/', {
+//       method: 'POST',
+//       body: JSON.stringify(userObj),
+//       headers: { 
+//         'Content-Type': 'application/json' 
+//       },
+//     }).then(res=>{
+//         if(res.ok){
+//         location.reload();
+//       } else {
+//         alert('Failed to sign up.');
+//       }
+//     })
+// })
 
   document
-    .querySelector('#login')
+    .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
   // document
