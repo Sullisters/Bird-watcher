@@ -5,6 +5,11 @@
 <h3>Location: {{location}}</h3>
 <h3>Weather: {{weather}}</h3>
 
+<a href="/sighting/{{id}}">
+    {{#each sighting}}
+    {{> sighting-details}}
+    {{/each}}
+</a>
 <button id="sighting">Sighting info</button>
 <button id="bird">Bird Info</button>
 <button id="getlocation">Location Info</button>
