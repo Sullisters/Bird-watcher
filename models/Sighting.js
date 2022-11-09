@@ -17,7 +17,7 @@ Sighting.init(
             allowNull: false,
         },
         entry_location: {
-            type: DataTypes.String,
+            type: DataTypes.STRING,
             allowNull:false, 
         }
     },
