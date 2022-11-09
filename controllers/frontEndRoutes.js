@@ -27,6 +27,7 @@ router.get("/event/:id",(req,res)=>{
     console.log(eventHbsData);
     res.render("journal",eventHbsData);
     })
+    // res.render("bird-api-details")
 })
 
 router.get("/sighting/:id",(req,res)=>{
@@ -43,5 +44,9 @@ router.get("/sighting/:id",(req,res)=>{
 router.get("/login",(req,res)=>{
     res.render("login")
 })
+
+// router.get("bird-api-details",(req,res)=>{
+//     res.render("bird-api-details")
+// })
 
 module.exports = router;

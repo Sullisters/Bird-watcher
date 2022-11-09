@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Bird } = require('../../models');
+const axios = require("axios")
 
 router.post('/', async (req, res) => {
   try {
@@ -45,5 +46,10 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/bird-api/:name', async (req,res) => {
+  // const ninjasresponse = await request to api ninjas
+  // res.json(ninjaresponse)
+})
 
 module.exports = router;
