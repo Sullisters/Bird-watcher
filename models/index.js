@@ -1,5 +1,7 @@
 const User = require('./User');
+const Bird = require('./Bird');
 const Event = require('./Event');
+const Sighting = require('./Sighting')
 
 User.hasMany(Event, {
   foreignKey: 'user_id',
@@ -10,4 +12,22 @@ Event.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Event };
+Event.hasMany(Bird, {
+  foreignKey: 'event_id',
+  onDelete: 'CASCADE'
+});
+
+Bird.belongsTo(Event, {
+  foreignKey: 'event_id'
+});
+
+Event.hasMany(Sighting, {
+  foreignKey: 'event_id',
+  onDelete: 'CASCADE'
+});
+
+Sighting.belongsTo(Event, {
+  foreignKey: 'event_id'
+});
+
+module.exports = { User, Bird, Event, Sighting };

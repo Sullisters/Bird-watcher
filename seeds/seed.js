@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
-const { User, Event } = require('../models');
+const { User, Bird } = require('../models');
 
 const userData = require('./userData.json');
-const eventData = require('./eventData.json');
+const birdData = require('./birdData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,9 +12,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const event of eventData) {
-    await Event.create({
-      ...event,
+  for (const bird of birdData) {
+    await Bird.create({
+      ...bird,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
