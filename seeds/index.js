@@ -1,18 +1,18 @@
-const sequelize = require('../config/connection');
-// const seedUsers = require('./'); //ADD FILE PATHS
-const seedBirds = require('./birdData');
-// const seedEvents = require('./') //ADD FILE PATHS
+// const sequelize = require('../config/connection');
+// // const seedUsers = require('./'); //ADD FILE PATHS
+// const seedBirds = require('./birdData');
+// // const seedEvents = require('./') //ADD FILE PATHS
 
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
 
-  await seedBirds();
+//   await seedBirds();
 
-  await seedEvents();
+//   await seedEvents();
 
-  await seedUsers();
+//   await seedUsers();
 
-  process.exit(0);
-};
+//   process.exit(0);
+// };
 
-seedAll();
+// seedAll();
