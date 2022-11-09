@@ -10,7 +10,7 @@ class User extends Model {
 
 User.init(
   {
-    username: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -42,8 +42,7 @@ User.init(
         return updatedUserData;
       },
     },
-    sequelize,
-    
+    sequelize
   }
 );
 

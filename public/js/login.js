@@ -1,8 +1,9 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
+    console.log("PREVENTED DEFAULT")
   
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const email = document.querySelector('#loginEmail').value.trim();
+    const password = document.querySelector('#loginPassword').value.trim();
   
     if (email && password) {
       const response = await fetch('/api/users/login', {
@@ -12,40 +13,43 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/events');
       } else {
-        alert('Failed to log in.');
+        alert('Incorrect Email or Password');
       }
     }
   };
   
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
+const signupForm = document.querySelector('#signup');
+signupForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    console.log("PREVENTED DEFAULT")
   
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (username && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ username, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
+    const userObj = {
+      email:document.querySelector('#signupEmail').value,
+      name:document.querySelector('#signupName').value,
+      password:document.querySelector('#signupPassword').value
+    }
+    fetch('/api/users/', {
+      method: 'POST',
+      body: JSON.stringify(userObj),
+      headers: { 
+        'Content-Type': 'application/json' 
+      },
+    }).then(res=>{
+        if(res.ok){
+        location.reload();
       } else {
         alert('Failed to sign up.');
       }
-    }
-  };
-  
+    })
+})
+
   document
-    .querySelector('.login-form')
+    .querySelector('#login')
     .addEventListener('submit', loginFormHandler);
   
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  // document
+  //   .querySelector('#signup')
+  //   .addEventListener('submit', signupFormHandler);
   
