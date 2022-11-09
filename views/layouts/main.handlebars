@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=`, initial-scale=1.0">
-    <title>Untitled Bird Thing</title>
+    <title>Bird Brain</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header><header>
+    <header>
          {{!-- <div class="" id="logo-card">
             <img src="" alt="">
         </div> --}}
-        <h3>
+        <nav>
+            <h3>
             <a href="/">Home</a>
              {{#if logged_in}}
-            <a href="/profile">Profile</a>
+            <a href="/dashboard">Profile</a>
             <button id ="logoutBtn">Logout</button>
             {{else}}
             <a href="/login">Login</a>
@@ -24,7 +25,9 @@
         {{!-- login --}}
         {{!-- logout --}}
         {{!-- profile --}}
-        </h3></header></header>
+            </h3>
+        </nav>
+        </header>
     <main>
         {{{body}}}
     </main>
