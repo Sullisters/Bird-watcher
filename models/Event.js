@@ -5,10 +5,6 @@ class Event extends Model {};
 
 Event.init(
     {
-        // title: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
         location: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -20,13 +16,6 @@ Event.init(
         date: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "User",
-                key: 'id',
-            },
         },
     },
     {
