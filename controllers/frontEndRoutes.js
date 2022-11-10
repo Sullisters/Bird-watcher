@@ -45,6 +45,8 @@ router.get("/login",(req,res)=>{
     res.render("login")
 })
 
+
+
 // router.get("bird-api-details",(req,res)=>{
 //     res.render("bird-api-details")
 // })
