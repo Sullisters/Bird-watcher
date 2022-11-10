@@ -10,14 +10,21 @@
 </form>
 <img id="journal-main-photo">
 
+<section id="birdCard">
+    <div>
+        {{#each bird as |bird|}}
+        {{> bird-details}}
+        {{/each}}
+    </div>
+</section>
+<section class="sightingCard">
 <a href="/sighting/{{id}}">
-    {{#each sighting}}
+    {{#each sighting as |sighting|}}
     {{> sighting-details}}
     {{/each}}
 </a>
-<button id="sighting">Sighting info</button>
-<button id="bird">Bird Info</button>
-<button id="getlocation">Location Info</button>
+</section>
+
 <button id="upload_widget" class="cloudinary-button">Upload files</button>
 
 <form action="" class="api-search">

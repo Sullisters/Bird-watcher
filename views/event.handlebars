@@ -5,17 +5,17 @@
     <button class="new-event-btn">New event</button>
     <section class="events-container">
         <a href="/event/{{id}}">
-            {{#each event}}
+            {{#each event as|event|}}
             {{> event-details}}
             {{/each}}
         </a>
     </section>
-    <section class="friends-container">
+    {{!-- <section class="friends-container">
         <a href="friend/event/{{id}}">
-        {{#each friend}}
+        {{#each friend as |friend|}}
         {{> friend-details}}
         {{/each}}
         </a>
-    </section>
+    </section> --}}
     </div>
 </section>
