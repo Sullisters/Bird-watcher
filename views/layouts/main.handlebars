@@ -15,12 +15,13 @@
         <nav>
             <h3>
             <a href="/">Home</a>
-             {{!-- {{#if logged_in}} --}}
-            <a href="/events">Profile</a>
+             {{#if logged_in}}
+             {{!-- This logged in template does not show Profile and Logout like it should --}}
+            <a href="/events"><h3>Profile</h3></a>
             <button id ="logoutBtn">Logout</button>
-            {{!-- {{else}} --}}
+            {{else}}
             <a href="/login">Login</a>
-            {{!-- {{/if}} --}}
+            {{/if}}
         {{!-- home --}}
         {{!-- login --}}
         {{!-- logout --}}

@@ -47,9 +47,16 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.get('/bird-api/:name', async (req,res) => {
-  // const ninjasresponse = await request to api ninjas
-  // res.json(ninjaresponse)
+router.get("/bird-info/:name",(req,res)=>{
+  const name = req.params.name
+  axios({
+      method: "GET",
+      url: 'https://api.api-ninjas.com/v1/animals?name='+name,
+      headers: { "X-Api-Key": "FY3mPWio8m9XNIUE3qUQtA==1cqhZ1GVfDAAKQ5W"}
+      }).then(function (response) {
+          console.log(response.data);
+          res.json(response.data);
+      });
 })
 
 module.exports = router;
