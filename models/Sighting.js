@@ -19,6 +19,12 @@ Sighting.init(
         entry_location: {
             type: DataTypes.STRING,
             allowNull:false, 
+        },
+        map_url: {
+            type:DataTypes.STRING,
+            validate: {
+                isURL: true,
+            }
         }
     },
     {
