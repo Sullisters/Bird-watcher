@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {User,Bird,Event, Sighting} = require('../models')
+const {User,Bird,Event, Sighting} = require('../models');
+const axios = require('axios');
 //need sighting routes added below
 //need friend routes added below
 //need to finish friend routes in friendRoutes.js
@@ -44,9 +45,5 @@ router.get("/sighting/:id",(req,res)=>{
 router.get("/login",(req,res)=>{
     res.render("login")
 })
-
-// router.get("bird-api-details",(req,res)=>{
-//     res.render("bird-api-details")
-// })
 
 module.exports = router;
