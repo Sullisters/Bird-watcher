@@ -3,11 +3,15 @@
     <div>
     <h3 class="events">Your entries:</h3>
     <button class="new-event-btn">New event</button>
-    {{!-- <button id="upload_widget" class="cloudinary-button">Upload files</button>
-    <section class="events-container"> --}}
+    {{!-- <button id="upload_widget" class="cloudinary-button">Upload files</button> --}}
+    <section class="events-container">
         <a href="/event/{{id}}">
             {{#each event}}
-            {{> event-details}}
+                <div class="card">
+                    <h4>Location: {{location}}</h4>
+                    <h4>Weather: {{weather}}</h4>
+                    <h4>Description: {{description}}</h4>
+                </div>
             {{/each}}
         </a>
     </section>
