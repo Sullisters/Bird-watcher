@@ -6,7 +6,11 @@
             <input type="password" name="password" id="loginPassword" placeholder="Enter Password Here">
             <button>Login</button>
         </form>
-    <button><a href="newAccount.handlebars">New Account</a></button>
+        <a href="newAccount">New Account</a>
+        {{#each newAccount}}
+        {{> newAccount}}
+        {{/each}}
+   
     </div>
 
 </section>

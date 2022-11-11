@@ -51,26 +51,23 @@ document.getElementById("upload_widget").addEventListener(
 // { api_key : "289214219512654", cloudName: "df4asanhm", uploadPreset: 'w7sz2h8r'},
 // (error, result) => { });
 
-// var data = new FormData();
-// data.append('upload_preset', 'w7sz2h8r');
-// data.append('cloud_name', 'df4asanhm');
+widget.open();
 
 // const config = {
 //     method: "POST",
 //     body: data
 // };
 
-// var imgurl = "https://api.cloudinary.com/v1_1/df4asanhm/image/upload";
-// fetch(imgurl, config)
-// .then(responseData => {
-//           console.log(JSON.stringify(responseData, null, 4));
-// })
-// cloudinary.api.create_upload_preset({
-//     name: 'demo_preset',
-//     folder: 'main',
-//     allowed_formats: 'jpg, png'
-// })
-// .then(uploadResult => console.log(uploadResult))
-// .catch(error => console.error(error));
+const config = {
+    method: "POST",
+    body: data 
+};
+
+var imgurl = "https://api.cloudinary.com/v1_1/<cloud_name>/image/upload";
+
+fetch(imgurl, config)
+.then(responseData => {
+          console.log(JSON.stringify(responseData, null, 4));
+})
 
 

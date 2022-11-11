@@ -1,14 +1,15 @@
-const signupForm = document.getElementById("signup-form");
+const signupForm = document.getElementById("submitNewUser");
 
-signupForm.addEventListener("submit",e=>{
-    e.preventDefault();
+function newUser(event){
+    event.preventDefault();
     console.log('PREVENTED DEFAULT!')
     const userObj = {
-        email:document.getElementById('signupEmail').value.trim(),
-        name:document.getElementById("signUpUser").value.trim(),
-        password:document.getElementById("signUpPassword").value,
+        email: document.getElementById('signupEmail').value.trim(),
+        name: document.getElementById("signupName").value.trim(),
+        password: document.getElementById("signupPassword").value,
+        confirmPassword: document.getElementById("confirmPassword").value
     }
-    fetch("/api/users/",{
+    fetch("/api/user/", {
         method:"POST",
         body:JSON.stringify(userObj),
         headers:{
@@ -23,6 +24,8 @@ signupForm.addEventListener("submit",e=>{
             location.reload()
         }
     }).then(data =>{
-        location.href= `/user/${data.id}`
+        location.href= `/users/${userData.id}`
     })
-});
+};
+
+signupForm.addEventListener("click", newUser);
