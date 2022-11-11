@@ -2,25 +2,23 @@
     <h1>Welcome back {{User.name}}!</h1>
     <div>
     <h3 class="events">Your entries:</h3>
-    <button class="new-event-btn">New event</button>
-<<<<<<< HEAD
 
-    {{!-- if new-event-button click =true, so new event form, save(post to event model) --}}
+    <form action="" class="addEvent">
+        <button id="newEventBtn">New event</button>
+        <input type="text" name="eventLocation" id="eventLocation">
+        <input type="text" name="eventWeather" id="eventWeather">
+        <input type="text" name="eventDescription" id="eventDescription">
+    </form>
+
     <section class="events-container">
-        <a href="/journal/{{id}}">
-=======
-    {{!-- <button id="upload_widget" class="cloudinary-button">Upload files</button>
-    <section class="events-container"> --}}
-        <a href="/event/{{id}}">
->>>>>>> dev
-            {{#each event}}
+            {{#each events}}
                 <div class="card">
-                    <h4>Location: {{location}}</h4>
+                    <hr>
+                    <a href="/journal/{{id}}"><h4>Location: {{location}}</h4></a>
                     <h4>Weather: {{weather}}</h4>
                     <h4>Description: {{description}}</h4>
                 </div>
             {{/each}}
-        </a>
     </section>
     {{!-- <section class="friends-container">
         <a href="friend/event/{{id}}">
@@ -31,8 +29,3 @@
     </section> --}}
     </div>
 </section>
-<<<<<<< HEAD
-=======
-{{!-- <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
-<script src="/js/cloudinary.js" type="text/javascript"></script> --}}
->>>>>>> dev

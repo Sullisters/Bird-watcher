@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const {User,Bird,Event, Sighting} = require('../models');
-const axios = require('axios');
 //need sighting routes added below
 //need friend routes added below
 //need to finish friend routes in friendRoutes.js
@@ -9,24 +8,17 @@ const axios = require('axios');
 router.get("/",(req,res)=>{
     res.render("home")
 })
+
+//THIS WORKS PLEASE DO NOT CHANGE -PHILIP-
 router.get("/login",(req,res)=>{
     if (req.session.logged_in){
-        return res.redirect(`/events`);
+        res.redirect('/');
+        return;
     }
     res.render("login", {
         logged_in: req.session.logged_in
     })
 })
-
-// router.get('/signup',(req,res)=>{
-//     if(req.session.loggedIn){
-//         return res.redirect(`/user/${req.session.userId}`)
-//     }
-//     res.render("signup",{
-//         loggedIn:false,
-//         userId:null
-//     })
-// })
 
 router.get("/newAccount", (req, res) => {
     console.log(req.session.logged_in);
@@ -36,14 +28,13 @@ router.get("/newAccount", (req, res) => {
     res.render('newAccount');
 })
 
-
 router.get("/events",(req,res)=>{
     if (!req.session.logged_in){
         return res.redirect("/login")
     }
    Event.findAll().then(events=>{
     const eventsHbsData = events.map(event=>event.get({plain:true}))
-    res.render("journal", {
+    res.render("event", {
         events:eventsHbsData
         })
     })
@@ -58,7 +49,6 @@ router.get("/journal/:id",(req,res)=>{
     console.log(eventHbsData);
     res.render("journal",eventHbsData);
     })
-    // res.render("bird-api-details")
 })
 
 router.get("/bird-details/:id"), (req,res)=>{

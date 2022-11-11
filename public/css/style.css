@@ -13,9 +13,9 @@ body {
 }
 
 /* This is for the bird details given by the ANIMALS API */
-/* .api-card {
+/* #api-card {
     color: var(--lightType);
-    background-color: rgba(221, 221, 221, 0.37);
+    background-color: rgba(221, 221, 221, 0.281);
     padding: 1rem;
     margin-bottom: 1rem;
 } */
