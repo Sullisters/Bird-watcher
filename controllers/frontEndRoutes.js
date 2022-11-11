@@ -1,22 +1,39 @@
 const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const {User,Bird,Event, Sighting} = require('../models');
 const axios = require('axios');
-//need sighting routes added below
-//need friend routes added below
-//need to finish friend routes in friendRoutes.js
 
-router.get("/",(req,res)=>{
+
+router.get("/", async (req,res)=>{
     res.render("home")
 })
+
 router.get("/login",(req,res)=>{
-    if (req.session.logged_in){
+    if (req.session.loggedIn){
         return res.redirect(`/events`);
     }
     res.render("login", {
-        logged_in: req.session.logged_in
-    })
-})
+        loggedIn: false,
+        userId: null,
+    });
+});
+
+router.get("/users/:id", (req, res) => {
+    if (!req.session.loggedIn) {
+      return res.redirect(`/login`);
+    }
+    User.findByPk(req.params.id)
+      .then((foundUser) => {
+        const hbsUser = foundUser.get({ plain: true });
+        console.log(hbsUser);
+        hbsUser.loggedIn = true;
+        hbsUser.userId = req.session.userId;
+        if (hbsUser.id === req.session.userId) {
+          hbsUser.isMyProfile = true;
+        }
+      })
+      .then(res.render("event"));
+  });
 
 // router.get('/signup',(req,res)=>{
 //     if(req.session.loggedIn){
@@ -28,17 +45,28 @@ router.get("/login",(req,res)=>{
 //     })
 // })
 
+// router.get("/newAccount", (req, res) => {
+//     console.log(req.session.loggedIn);
+//     if (req.session.loggedIn) {
+//      return res.redirect('/events');
+//     } 
+//     res.render('newAccount');
+// })
+
 router.get("/newAccount", (req, res) => {
-    console.log(req.session.logged_in);
-    if (req.session.logged_in) {
-     return res.redirect('/events');
-    } 
-    res.render('newAccount');
-})
+    // signup
+    if (req.session.loggedIn) {
+      return res.redirect(`/users/${req.session.id}`);
+    }
+    res.render("newAccount", {
+      loggedIn: false,
+      userId: null,
+    });
+  });
 
 
 router.get("/events",(req,res)=>{
-    if (!req.session.logged_in){
+    if (!req.session.loggedIn){
         return res.redirect("/login")
     }
    Event.findAll().then(events=>{

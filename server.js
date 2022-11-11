@@ -34,16 +34,16 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-app.post("/api", (request, response) => {
-  console.log("I got a request!");
-  console.log(request.body);
-  const data = request.body;
-  response.json({
-    status: "success",
-    latitude: data.lat,
-    longitude: data.lon,
-  });
-});
+// app.post("/api", (request, response) => {
+//   console.log("I got a request!");
+//   console.log(request.body);
+//   const data = request.body;
+//   response.json({
+//     status: "success",
+//     latitude: data.lat,
+//     longitude: data.lon,
+//   });
+// });
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
