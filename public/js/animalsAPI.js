@@ -4,6 +4,7 @@ const searchBtn = document.querySelector('#apiBtn');
 
 console.log("hello")
 
+// Function to grab the data from the API, map over it and return specific information
 function startSearch(event) {
     event.preventDefault();
     let searchTerm = birdSearchEl.value.trim()
@@ -20,18 +21,19 @@ function startSearch(event) {
     })
     .then(data => {
         console.log(data[0].characteristics);
+        console.log(data[0].taxonomy.scientific_name);
         const html = [data[0].characteristics].map(bird => {
             return `
-            <div>
-                <p>Color: ${bird.color}</p>
-                <p>Common Name: ${bird.common_name}</p>
-                <p>Diet: ${bird.diet}</p>
-                <p>Habitat: ${bird.habitat}</p>
-                <p>Location: ${bird.location}</p>
+            <div class="api-card">
+                <h4>Common Name: ${bird.common_name}</h4>
+                <h4>Color: ${bird.color}</h4>
+                <h4>Diet: ${bird.diet}</h4>
+                <h4>Habitat: ${bird.habitat}</h4>
+                <h4>Location: ${bird.location}</h4>
+                <h4>Weight: ${bird.weight}</h4>
             </div>
             `
         })
-        // console.log(html)
         document
             .querySelector("#apiDetails")
             .insertAdjacentHTML("afterbegin", html);

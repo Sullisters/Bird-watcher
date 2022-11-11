@@ -1,10 +1,10 @@
 <section class="dashboard-container">
-    <h1>Welcome back {{user}}!</h1>
+    <h1>Welcome back {{User.name}}!</h1>
     <div>
     <h3 class="events">Your entries:</h3>
     <button class="new-event-btn">New event</button>
-    <button id="upload_widget" class="cloudinary-button">Upload files</button>
-    <section class="events-container">
+    {{!-- <button id="upload_widget" class="cloudinary-button">Upload files</button>
+    <section class="events-container"> --}}
         <a href="/event/{{id}}">
             {{#each event}}
             {{> event-details}}
@@ -20,5 +20,5 @@
     </section>
     </div>
 </section>
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
-<script src="/js/cloudinary.js" type="text/javascript"></script>
+{{!-- <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+<script src="/js/cloudinary.js" type="text/javascript"></script> --}}
