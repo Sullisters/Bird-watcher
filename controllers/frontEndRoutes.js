@@ -19,7 +19,7 @@ router.get("/events",(req,res)=>{
     })
 })
 
-router.get("/event/:id",(req,res)=>{
+router.get("/journal/:id",(req,res)=>{
    Event.findByPk(req.params.id,{
     include: [User]
    }).then(event=>{
