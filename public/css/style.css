@@ -10,3 +10,6 @@ body {
     color: var(--lightType);
 }
 
+img {
+    border-radius: 50%;
+}
