@@ -8,9 +8,11 @@ router.get("/", async (req,res)=>{
     res.render("home")
 })
 
+//THIS WORKS PLEASE DO NOT CHANGE -PHILIP-
 router.get("/login",(req,res)=>{
-    if (req.session.loggedIn){
-        return res.redirect(`/events`);
+    if (req.session.logged_in){
+        res.redirect('/events');
+        return;
     }
     res.render("login", {
         loggedIn: false,
@@ -64,14 +66,13 @@ router.get("/newAccount", (req, res) => {
     });
   });
 
-
 router.get("/events",(req,res)=>{
     if (!req.session.loggedIn){
         return res.redirect("/login")
     }
    Event.findAll().then(events=>{
     const eventsHbsData = events.map(event=>event.get({plain:true}))
-    res.render("journal", {
+    res.render("event", {
         events:eventsHbsData
         })
     })
@@ -86,7 +87,6 @@ router.get("/journal/:id",(req,res)=>{
     console.log(eventHbsData);
     res.render("journal",eventHbsData);
     })
-    // res.render("bird-api-details")
 })
 
 router.get("/bird-details/:id"), (req,res)=>{

@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret:  process.env.SESSION_SECRET,
   cookie: {
-    maxAge:1000*60*60*2
+    maxAge:1000*60*60*2,
+    httpOnly: true,
+    sameSite: 'strict'
   },
   resave: false,
   saveUninitialized: true,
@@ -24,6 +26,7 @@ const sess = {
 app.use(express.static("public"))
 
 const hbs = exphbs.create({});
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

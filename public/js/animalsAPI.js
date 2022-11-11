@@ -2,7 +2,7 @@
 const birdSearchEl = document.querySelector('#search-field');
 const searchBtn = document.querySelector('#apiBtn');
 
-console.log("hello")
+// console.log("hello")
 
 // Function to grab the data from the API, map over it and return specific information
 function startSearch(event) {
@@ -24,7 +24,8 @@ function startSearch(event) {
         console.log(data[0].taxonomy.scientific_name);
         const html = [data[0].characteristics].map(bird => {
             return `
-            <div class="api-card">
+            <div id="api-card">
+                <hr>
                 <h4>Common Name: ${bird.common_name}</h4>
                 <h4>Color: ${bird.color}</h4>
                 <h4>Diet: ${bird.diet}</h4>
