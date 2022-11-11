@@ -45,6 +45,7 @@ var myWidget = cloudinary.createUploadWidget({
 { api_key : "289214219512654", cloudName: "df4asanhm", uploadPreset: 'w7sz2h8r'}, 
 (error, result) => { });
 
+
 widget.open();
 
 var data = new FormData();
@@ -63,5 +64,3 @@ fetch(imgurl, config)
 .then(responseData => {
           console.log(JSON.stringify(responseData, null, 4));
 })
-
-
