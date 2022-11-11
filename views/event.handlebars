@@ -3,22 +3,32 @@
     <div>
     <h3 class="events">Your entries:</h3>
     <button class="new-event-btn">New event</button>
+<<<<<<< HEAD
+
+    {{!-- if new-event-button click =true, so new event form, save(post to event model) --}}
+    <section class="events-container">
+        <a href="/journal/{{id}}">
+=======
     {{!-- <button id="upload_widget" class="cloudinary-button">Upload files</button>
     <section class="events-container"> --}}
         <a href="/event/{{id}}">
+>>>>>>> dev
             {{#each event}}
             {{> event-details}}
             {{/each}}
         </a>
     </section>
-    <section class="friends-container">
+    {{!-- <section class="friends-container">
         <a href="friend/event/{{id}}">
-        {{#each friend}}
+        {{#each friend as |friend|}}
         {{> friend-details}}
         {{/each}}
         </a>
-    </section>
+    </section> --}}
     </div>
 </section>
+<<<<<<< HEAD
+=======
 {{!-- <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/js/cloudinary.js" type="text/javascript"></script> --}}
+>>>>>>> dev
