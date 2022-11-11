@@ -19,4 +19,4 @@ var myWidget = cloudinary.createUploadWidget({
 { api_key : "289214219512654", cloudName: "my-cloud", uploadSignature: generateSignature }, 
 (error, result) => { });
 
-widget.open();
+myWidget.open();
