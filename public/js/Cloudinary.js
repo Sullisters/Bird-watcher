@@ -24,8 +24,8 @@ var myWidget = cloudinary.createUploadWidget({
     // folder: "user_images",
     // maxImageFileSize: 2000000,
     // maxImageWidth: 2000,
-    // theme: "purple",
-    // cropping: true,
+    theme: "purple",
+    cropping: true,
     // showSkipCropButton: true,
   }, 
     (error, result) => { 
