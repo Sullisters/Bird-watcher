@@ -11,13 +11,6 @@ signupForm.addEventListener("submit", e => {
         email: document.querySelector("#signupEmail").value,
         password : document.querySelector("#signupPassword").value
     }
-<<<<<<< HEAD
-    fetch("/api/users/", {
-        method:"POST",
-        body:JSON.stringify(userObj),
-        headers:{
-            "Content-Type":"application/json"
-=======
 
     console.log(JSON.stringify(userObj))
 
@@ -26,7 +19,6 @@ signupForm.addEventListener("submit", e => {
         body: JSON.stringify(userObj),
         headers: {
             "Content-Type" : "application/json"
->>>>>>> 6986ad0ad52cd7e9bbe081a4ecd30d8b97d3ae73
         }
         
     }).then(res=>{
