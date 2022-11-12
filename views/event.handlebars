@@ -4,20 +4,17 @@
     <h3 class="events">Your entries:</h3>
 
     <form action="" class="addEvent">
-        <button id="newEventBtn">New event</button>
         <input type="text" name="eventLocation" id="eventLocation">
         <input type="text" name="eventWeather" id="eventWeather">
+        <input type="date" name="eventDate" id="eventDate">
         <input type="text" name="eventDescription" id="eventDescription">
+        <input type="submit" name="event-submit" id="eventSubmitButton">
     </form>
-
+    {{events}}
+{{!-- going to need a db.query in my route --}}
     <section class="events-container">
             {{#each events}}
-                <div class="card">
-                    <hr>
-                    <a href="/journal/{{id}}"><h4>Location: {{location}}</h4></a>
-                    <h4>Weather: {{weather}}</h4>
-                    <h4>Description: {{description}}</h4>
-                </div>
+                   {{> event-details}}
             {{/each}}
     </section>
     {{!-- <section class="friends-container">
@@ -29,3 +26,4 @@
     </section> --}}
     </div>
 </section>
+<script src="/js/newEvent.js"></script>

@@ -1,35 +1,7 @@
 
-{{!-- for each bird --}}
-    <Section class="birdCard">
-    {{!-- picture upload --}}
-<<<<<<< HEAD
-    <input type="file" id="image">{{bird.image}}
-    
-    <form id="birdInput">
-    <input type="text" name="birdName" id="birdName" placeholder="Common Name">
-    
-    <input type="date" name="birdName" id="birdDate" placeholder="Date of Sighting">
-    
-    <input type="text" name="birdSpecies" id="birdSpecies" placeholder="Latin Name or Species">
-    
-    <input type="text" name="birdColors" id="birdColors" placeholder="What Color/s was the bird?">
-    
-    <input type="text" name="birdDiet" id="birdDiet" placeholder="What was the bird eating?">
-    
-    <input type="text" name="birdMigration" id="birdMigration" placeholder="What is its migratory path?">
-    
-    <input type="text" name="birdNotes" id="birdNotes" placeholder="Any extra notes? (i.e. What was it doing, did it have any unique markings for later identification like the color of ring around its eyes, or foot color?)">
-    
-    <input type="submit" name="birdSubmit"id="birdSubmit">
-    </form>
-    </Section>
-    
-    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
-=======
-    {{!-- <input type="file" id="image">{{bird.image}} --}}
-    {{!-- input name --}}
-    <input type="">
-    <section class="bird-details">
+    <section class="birdCard">
+        <a href="/sighting/{{id}}">
+        <img src="https://res.cloudinary.com/df4asanhm/image/upload/w_200,h_300,c_fill,q_100/{{image_url}}">
         <ul>
             <li>{{name}}</li>
             <li>{{date_created}}</li>
@@ -41,14 +13,6 @@
             <li>{{activity}}</li>
             <li>{{description}}</li>
         </ul>
+        </a>
     </section>
-    {{!-- input date_created --}}
-    {{!-- input  bird_species--}}
-    {{!-- input bird_colors --}}
-   
-    {{!-- input bird_size --}}
-    {{!-- input bird_diet --}}
-    {{!-- input migration --}}
-    {{!-- input description --}} 
-    {{!-- input activity --}}
->>>>>>> dev
+   <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  

@@ -1,43 +1,30 @@
 
-{{!-- sighting --}}
-{{!-- bird --}}
-<h2>Created by: {{User.name}} on {{date}}</h2>
-<h3>Location: {{location}}</h3>
-<h3>Weather: {{weather}}</h3>
-{{!-- <form id="cloudinary">
-<input type="file" id="cloudinaryjournal-upload">
-</form>
-<img id="journal-main-photo"> --}}
+<h4>{{location}}on {{date}}</h4>
+<h5>The weather was: {{weather}}</h5>
 
-<img id="journal-main-photo"/>
+<img src="{{bird.image_url}}">
 
 <section id="birdCard">
     <div>
-        {{#each bird as |bird|}}
+        {{#each bird}}
         {{> bird-details}}
         {{/each}}
     </div>
 </section>
 {{!-- if bird=true then new sighting card offered --}}
 <section class="sightingCard">
-<a href="/sighting/{{id}}">
     {{#each sighting}}
     {{> sighting-details}}
     {{/each}}
-</a>
-<section class="journalButtons">
-    <button id="sighting">Sighting info</button>
-    <button id="bird">Bird Info</button>
-    <button id="getlocation">Location Info</button>
-    <button id="upload_widget">Upload files</button>
-</section>
 
-<form action="" class="api-search">
-    <input type="text" name="search" id="search-field" placeholder="search">
-    <button id="apiBtn">Search</button>
+<form class="api-search">
+    <input type="search" name="search" id="search-field" placeholder="search">
+    <input type="submit" id="apiSubmitBtn" placeholder="Search">
 </form>
 
+{{> birdForm-details}}
 <div id="apiDetails"></div>
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/js/animalsAPI.js" type="text/javascript"></script>
+<script src="/js/newBird.js"></script>
