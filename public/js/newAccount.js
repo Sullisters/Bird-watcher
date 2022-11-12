@@ -7,7 +7,6 @@ function newUser(event){
         email: document.getElementById('signupEmail').value.trim(),
         name: document.getElementById("signupName").value.trim(),
         password: document.getElementById("signupPassword").value,
-        confirmPassword: document.getElementById("confirmPassword").value
     }
     fetch("/api/users/", {
         method:"POST",
@@ -23,9 +22,9 @@ function newUser(event){
             alert("trumpet sound")
             location.reload()
         }
-    }).then(data =>{
-        location.href= `/users/${userData.id}`
-    })
+    // }).then(data =>{
+    //     location.href= `/users/${userData.id}`
+    // })
 };
 
 signupForm.addEventListener("click", newUser);
