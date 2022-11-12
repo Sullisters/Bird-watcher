@@ -56,15 +56,13 @@ router.get("/users/:id", (req, res) => {
 // })
 
 router.get("/newAccount", (req, res) => {
-    // signup
-    if (req.session.loggedIn) {
-      return res.redirect(`/users/${req.session.id}`);
-    }
-    res.render("newAccount", {
-      loggedIn: false,
-      userId: null,
-    });
-  });
+
+    console.log(req.session.logged_in);
+    if (req.session.logged_in) {
+     return res.redirect('/');
+    } 
+    res.render('newAccount');
+})
 
 router.get("/events",(req,res)=>{
     if (!req.session.loggedIn){

@@ -1,6 +1,6 @@
 //This handles the Animals API search data
 const birdSearchEl = document.querySelector('#search-field');
-const searchBtn = document.querySelector('#apiBtn');
+const searchBtn = document.querySelector('.api-search');
 
 // console.log("hello")
 
@@ -45,5 +45,5 @@ function startSearch(event) {
 }
 
 //Adds event listener to watch for a click of this button and execute the function to search the API database
-searchBtn.addEventListener('click', startSearch);
+searchBtn.addEventListener('submit', startSearch);
 
