@@ -37,7 +37,14 @@ Bird.init(
     activity: {
       type: DataTypes.STRING(100),
     },
-  },
+    image_url: {
+      type:DataTypes.STRING,
+      validate: {
+          isURL: true,
+      }
+
+    },
+    },
   {
     sequelize
   }

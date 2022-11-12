@@ -9,7 +9,7 @@ function newUser(event){
         password: document.getElementById("signupPassword").value,
         confirmPassword: document.getElementById("confirmPassword").value
     }
-    fetch("/api/user/", {
+    fetch("/api/users/", {
         method:"POST",
         body:JSON.stringify(userObj),
         headers:{

@@ -22,7 +22,13 @@ Event.init(
         },
         description: {
             type: DataTypes.STRING(50),
-        }
+        },
+        event_url: {
+            type:DataTypes.STRING,
+            validate: {
+                isURL: true,
+            }
+        },
     },
     {
         sequelize

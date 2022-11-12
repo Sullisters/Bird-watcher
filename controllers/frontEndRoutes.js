@@ -23,7 +23,7 @@ router.get("/login",(req,res)=>{
 router.get("/newAccount", (req, res) => {
     console.log(req.session.logged_in);
     if (req.session.logged_in) {
-     return res.redirect('/events');
+     return res.redirect('/');
     } 
     res.render('newAccount');
 })
