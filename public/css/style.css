@@ -2,20 +2,79 @@
     --primary: rgb(220, 46, 255);
     --secondary: red;
     --tertiary: purple;
-    --lightType: white;
+    --lightType: rgb(255, 255, 255);
+    --opacity: rgba(221, 221, 221, 0.281);
 }
 
 body {
     background: var(--primary);
     color: var(--lightType);
     font-family: "Helvetica", sans-serif;
-    /* background-image: url("https://i.imgur.com/y5RTHxR.png"); */
+    background-image: url("https://i.imgur.com/y5RTHxR.png");
+    background-size: cover;
 }
 
+/* CLASS SECTION */
+
+.login-form {
+    background-color: var(--opacity);
+    padding: 1rem;
+    margin-top: 5vh;
+    width: 40%;
+}
+
+.login-form:after {
+    content: "";
+    display: block;
+    padding-bottom: 85%;
+}
+
+/* For the "Bird Brain" type block above the login info on LOGIN PAGE */
+
+
+/* ID SECTION */
+
 /* This is for the bird details given by the ANIMALS API */
-/* #api-card {
+#api-card {
     color: var(--lightType);
-    background-color: rgba(221, 221, 221, 0.281);
+    background-color: var(--opacity);
     padding: 1rem;
     margin-bottom: 1rem;
+}
+
+/* For the Nav Bar */
+#navBar {
+    background-color: var(--opacity);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Specific for the size of the "Bird Brain:" title header */
+#birdBrainTitle {
+    font-size: 9vw;
+}
+
+/* Specific for the size of the "A Digital Journal for Bird Nerds" descriptor */
+#birdBrainDesc {
+    font-size: 3vw;
+}
+
+/* This is the ENTIRE "Bird Brain" header object */
+#titleHeader {
+    padding: 18%;
+}
+
+/* For the "login" button on the LOGIN PAGE */
+/* #loginBtn {
+    margin-left: -6vw;
+} */
+
+/* For the "Login:" type on the login page */
+/* #loginType {
+    margin-right: -6vw;
+} */
+
+/* For the "New Account" button on the login page */
+/* #newAccountBtn {
+    margin-top: 1rem;
 } */
