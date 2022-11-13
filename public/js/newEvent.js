@@ -5,9 +5,9 @@ newEvent.addEventListener("submit", async event => {
     event.preventDefault();
 
     const eventObj = {
+        date: document.querySelector('#eventDate').value,
         location: document.querySelector('#eventLocation').value,
         weather: document.querySelector('#eventWeather').value,
-        date: document.querySelector('#eventDate').value,
         description: document.querySelector('#eventDescription').value, 
         // eventURL 
     }

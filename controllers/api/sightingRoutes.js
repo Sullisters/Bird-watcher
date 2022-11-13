@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Sighting } = require('../../models');
 
 router.post('/', async (req, res) => {
+  console.log("I'm peeping this, much like a bird: peep, peep.")
     try {
       const newSighting = await Sighting.create({
         ...req.body,
