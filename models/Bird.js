@@ -8,14 +8,6 @@ Bird.init(
     name: {
       type: DataTypes.STRING,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-      validate:{
-        isDate:true,
-      }
-    },
     bird_species: {
       type: DataTypes.STRING,
     },
@@ -25,20 +17,14 @@ Bird.init(
     bird_size: {
       type: DataTypes.STRING(30),
     },
+    weight: {
+      type: DataTypes.STRING
+    },
     bird_diet: {
       type: DataTypes.STRING(20),
     },
     migration: {
       type: DataTypes.STRING,
-    },
-    description: {
-      type: DataTypes.TEXT,
-    },
-    habitat: {
-      type: DataTypes.STRING(100),
-    },
-    bird_image: {
-      type:DataTypes.STRING,
     },
     habitat: {
       type:DataTypes.STRING,
@@ -46,9 +32,16 @@ Bird.init(
     location: {
       type: DataTypes.STRING,
     },
-    weight: {
-      type: DataTypes.STRING
-    }
+    activity: {
+      type: DataTypes.STRING(100),
+    },
+    description: {
+      type: DataTypes.TEXT,
+    },
+    bird_image: {
+      type:DataTypes.STRING,
+    },
+    
   },
   {
     sequelize
