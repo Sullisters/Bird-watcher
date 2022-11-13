@@ -21,8 +21,8 @@ newBird.addEventListener("submit", async event => {
         }
     }) 
     if (res.ok) {
-        res.status(200).JSON
+       console.log("yessss")
     } else {
-        res.status(400).JSON
+        alert("Try again!")
     }
 })

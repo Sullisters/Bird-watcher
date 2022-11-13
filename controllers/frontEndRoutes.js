@@ -37,24 +37,6 @@ router.get("/users/:id", (req, res) => {
       .then(res.render("event"));
   });
 
-// router.get('/signup',(req,res)=>{
-//     if(req.session.loggedIn){
-//         return res.redirect(`/user/${req.session.userId}`)
-//     }
-//     res.render("signup",{
-//         loggedIn:false,
-//         userId:null
-//     })
-// })
-
-// router.get("/newAccount", (req, res) => {
-//     console.log(req.session.loggedIn);
-//     if (req.session.loggedIn) {
-//      return res.redirect('/events');
-//     } 
-//     res.render('newAccount');
-// })
-
 router.get("/newAccount", (req, res) => {
 
     console.log(req.session.logged_in);
@@ -78,12 +60,12 @@ router.get("/events",(req,res)=>{
 
 router.get("/journal/:id",(req,res)=>{
    Event.findByPk(req.params.id,{
-    include: [User]
+    include: [Bird]
    }).then(event=>{
-    const eventHbsData = event.get({plain:true});
-    console.log(event);
-    console.log(eventHbsData);
-    res.render("journal",eventHbsData);
+    const birdHbsData = event.get({plain:true});
+    console.log("we are in communicado");
+    console.log(birdHbsData);
+    res.render("journal",birdHbsData);
     })
 })
 
