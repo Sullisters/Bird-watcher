@@ -17,8 +17,20 @@ body {
 /* CLASS SECTION */
 
 .login-form {
-    background-color: var(--primary);
+    background-color: var(--opacity);
+    padding: 1rem;
+    margin-top: 5vh;
+    width: 40%;
 }
+
+.login-form:after {
+    content: "";
+    display: block;
+    padding-bottom: 85%;
+}
+
+/* For the "Bird Brain" type block above the login info on LOGIN PAGE */
+
 
 /* ID SECTION */
 
@@ -53,16 +65,16 @@ body {
 }
 
 /* For the "login" button on the LOGIN PAGE */
-#loginBtn {
+/* #loginBtn {
     margin-left: -6vw;
-}
+} */
 
 /* For the "Login:" type on the login page */
-#loginType {
+/* #loginType {
     margin-right: -6vw;
-}
+} */
 
 /* For the "New Account" button on the login page */
-#newAccountBtn {
+/* #newAccountBtn {
     margin-top: 1rem;
-}
+} */
