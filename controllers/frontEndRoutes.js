@@ -58,14 +58,25 @@ router.get("/events",(req,res)=>{
     })
 })
 
+// router.get("/journal/:id", (req,res)=>{
+//     Event.findByPk(req.params.id,{
+//         include:[Bird]
+//     });
+//     const newBird = Bird.findAll().then(birds =>{
+//         const birdHbsData = birds.map(birds=>birds.get({plain:true}))
+//         res.render("journal", {birds:birdHbsData})
+//     })
+// })
+
 router.get("/journal/:id",(req,res)=>{
    Event.findByPk(req.params.id,{
     include: [Bird]
-   }).then(event=>{
-    const birdHbsData = event.get({plain:true});
+   }).then(newBird=>{
+    const birdHbsData = newBird.map(newBird => newBird.get({plain:true}));
     console.log("we are in communicado");
     console.log(birdHbsData);
-    res.render("journal",birdHbsData);
+    res.render("journal",{
+        newbird:birdHbsData});
     })
 })
 
