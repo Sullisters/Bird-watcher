@@ -26,6 +26,13 @@ var myWidget = cloudinary.createUploadWidget(
         publicId +
         ".jpg";
       console.log(imageUrl);
+      fetch(`/journal/:id`,{
+        method:"PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        imageUrl:JSON.stringify(imageUrl),
+      })
       // .setAttribute("src", result.info.secure_url);
     }
   }
@@ -51,7 +58,7 @@ document.getElementById("upload_widget").addEventListener(
 // { api_key : "289214219512654", cloudName: "df4asanhm", uploadPreset: 'w7sz2h8r'},
 // (error, result) => { });
 
-widget.open();
+// widget.open();
 
 // const config = {
 //     method: "POST",
@@ -60,13 +67,13 @@ widget.open();
 
 const config = {
     method: "POST",
-    body: data 
+    body: formData 
 };
 
-var imgurl = "https://api.cloudinary.com/v1_1/<cloud_name>/image/upload";
+// var imgurl = "https://api.cloudinary.com/v1_1/df4asanhm/image/upload";
 
-fetch(imgurl, config)
-.then(responseData => {
-          console.log(JSON.stringify(responseData, null, 4));
-})
+// fetch(imageUrl, config)
+// .then(responseData => {
+//           console.log(JSON.stringify(responseData, null, 4));
+// })
 
