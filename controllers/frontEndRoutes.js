@@ -21,7 +21,7 @@ router.get("/login",(req,res)=>{
 });
 
 router.get("/users/:id", (req, res) => {
-    if (!req.session.loggedIn) {
+    if (!req.session.logged_in) {
       return res.redirect(`/login`);
     }
     User.findByPk(req.params.id)
@@ -37,24 +37,6 @@ router.get("/users/:id", (req, res) => {
       .then(res.render("event"));
   });
 
-// router.get('/signup',(req,res)=>{
-//     if(req.session.loggedIn){
-//         return res.redirect(`/user/${req.session.userId}`)
-//     }
-//     res.render("signup",{
-//         loggedIn:false,
-//         userId:null
-//     })
-// })
-
-// router.get("/newAccount", (req, res) => {
-//     console.log(req.session.loggedIn);
-//     if (req.session.loggedIn) {
-//      return res.redirect('/events');
-//     } 
-//     res.render('newAccount');
-// })
-
 router.get("/newAccount", (req, res) => {
 
     console.log(req.session.logged_in);
@@ -65,7 +47,7 @@ router.get("/newAccount", (req, res) => {
 })
 
 router.get("/events",(req,res)=>{
-    if (!req.session.loggedIn){
+    if (!req.session.logged_in){
         return res.redirect("/login")
     }
    Event.findAll().then(events=>{
@@ -76,41 +58,51 @@ router.get("/events",(req,res)=>{
     })
 })
 
-router.get("/journal/:id",(req,res)=>{
-   Event.findByPk(req.params.id,{
-    include: [User]
-   }).then(event=>{
-    const eventHbsData = event.get({plain:true});
-    console.log(event);
-    console.log(eventHbsData);
-    res.render("journal",eventHbsData);
+router.get("/journal/:id", (req,res)=>{
+    Event.findByPk(req.params.id,{
+        include:[Bird]
+    });
+    const newBird = Bird.findAll().then(birds =>{
+        const birdHbsData = birds.map(birds=>birds.get({plain:true}))
+        res.render("journal", {birds:birdHbsData})
     })
 })
 
-router.get("/bird-details/:id"), (req,res)=>{
-    Bird.findByPk(req.params.id,{
-        include: [sighting]
-    }).then(bird =>{
-        const birdHbsData = bird.map(bird=>bird.get({plain:true}));
-        console.log(bird);
-        console.log(birdHbsData);
-        res.render("journal", birdHbsData);
-    })
-}
-
-router.get("/sighting/:id",(req,res)=>{
-    Sighting.findByPk(req.params.id,{
-        include: [Bird]
-    }).then(sighting=>{
-        const sightingHbsData = sighting.map(sighting => sighting.get({plain:true}));
-        console.log(sighting);
-        console.log(sightingHbsData);
-        res.render("journal", sightingHbsData)
-    })
-})
-
-router.get("/sessions", (req, res) => {
-    res.json(req.session);
-  });
-
-module.exports = router;
+// router.get("/journal/:id",(req,res)=>{
+//     Event.findByPk(req.params.id,{
+//      include: [Bird]
+//     }).then(bird=>{
+//      const birdHbsData = bird.get({plain:true});
+//      console.log("yayyyyy");
+//      console.log(birdHbsData);
+//      res.render("journal",birdHbsData);
+//      })
+//  })
+ 
+ router.get("/bird-details/:id"), (req,res)=>{
+     Bird.findByPk(req.params.id,{
+         include: [sighting]
+     }).then(bird =>{
+         const birdHbsData = bird.map(bird=>bird.get({plain:true}));
+         console.log(bird);
+         console.log(birdHbsData);
+         res.render("journal", birdHbsData);
+     })
+ }
+ 
+ router.get("/sighting/:id",(req,res)=>{
+     Sighting.findByPk(req.params.id,{
+         include: [Bird]
+     }).then(sighting=>{
+         const sightingHbsData = sighting.map(sighting => sighting.get({plain:true}));
+         console.log(sighting);
+         console.log(sightingHbsData);
+         res.render("journal", sightingHbsData)
+     })
+ })
+ 
+ router.get("/sessions", (req, res) => {
+     res.json(req.session);
+   });
+ 
+ module.exports = router;

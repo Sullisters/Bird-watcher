@@ -11,7 +11,7 @@ formData.append("upload_preset", "w7sz2h8r");
 
 var myWidget = cloudinary.createUploadWidget(
   {
-    cloudName: "df4asanhm",
+    cloudName: cloudName,
     uploadPreset: "w7sz2h8r",
     theme: "purple",
     cropping: true,
