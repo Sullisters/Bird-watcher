@@ -1,15 +1,30 @@
 <section class="new-user-card">
-    <div class="new-user-container">
-        <h3>Login</h3>
-        <form action="" class="login-form">
-            <input type="email" name="email" id="loginEmail" placeholder="Enter Email Here">
-            <input type="password" name="password" id="loginPassword" placeholder="Enter Password Here">
-            <button>Login</button>
+
+    <div class="new-user-container container text-center">
+
+        
+        <form action="" class="login-form row justify-content-start">
+            {{!-- <div class="col" id="loginType">
+                <h3>Login</h3>
+            </div> --}}
+            <div class="col">
+                <input class="form-control" type="email" name="email" id="loginEmail" placeholder="Enter Email Here" style="width: 20vw">
+            </div>
+            <div class="col">
+                <input class="form-control" type="password" name="password" id="loginPassword" placeholder="Enter Password Here" style="width: vw">
+            </div>
+            <div class="col" id="loginBtn">
+                <button class="btn btn-outline-light border border-0">Login</button>
+            </div>
+            <div class="col">
+                <a class="btn btn-outline-light border border-0" id="newAccountBtn" href="newAccount">New Account</a>
+                    {{#each newAccount}}
+                    {{> newAccount}}
+                    {{/each}}
+
+            </div>
         </form>
-        <a href="newAccount">New Account</a>
-        {{#each newAccount}}
-        {{> newAccount}}
-        {{/each}}
+        
    
     </div>
 
