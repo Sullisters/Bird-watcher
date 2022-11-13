@@ -34,17 +34,22 @@ Bird.init(
     description: {
       type: DataTypes.TEXT,
     },
-    activity: {
+    habitat: {
       type: DataTypes.STRING(100),
     },
-    image_url: {
+    bird_image: {
       type:DataTypes.STRING,
-      validate: {
-          isURL: true,
-      }
-
     },
+    habitat: {
+      type:DataTypes.STRING,
     },
+    location: {
+      type: DataTypes.STRING,
+    },
+    weight: {
+      type: DataTypes.STRING
+    }
+  },
   {
     sequelize
   }

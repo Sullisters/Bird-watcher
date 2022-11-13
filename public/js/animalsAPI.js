@@ -2,6 +2,9 @@
 const birdSearchEl = document.querySelector('#search-field');
 const searchBtn = document.querySelector('.api-search');
 
+const refresh = document.getElementById('refreshApiBtn');
+const container = document.querySelector('.refresh-output')
+
 // console.log("hello")
 
 // Function to grab the data from the API, map over it and return specific information
@@ -30,20 +33,28 @@ function startSearch(event) {
                 <h4>Color: ${bird.color}</h4>
                 <h4>Diet: ${bird.diet}</h4>
                 <h4>Habitat: ${bird.habitat}</h4>
-                <h4>Location: ${bird.location}</h4>
                 <h4>Weight: ${bird.weight}</h4>
-            </div>
-            `
-        })
-        document
+                <h4>Location: ${bird.location}</h4>
+                </div>
+                `
+            })
+            document
             .querySelector("#apiDetails")
             .insertAdjacentHTML("afterbegin", html);
-    })
-    .catch(error => {
-        console.log(error);
-    })
-}
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+    
+    //Adds event listener to watch for a click of this button and execute the function to search the API database
+    searchBtn.addEventListener('submit', startSearch);
 
-//Adds event listener to watch for a click of this button and execute the function to search the API database
-searchBtn.addEventListener('submit', startSearch);
 
+    function refreshApi(){
+       container.replaceChildren();
+    }
+    
+    refresh.addEventListener("click", refreshApi)
+    
+    

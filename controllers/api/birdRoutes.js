@@ -3,6 +3,7 @@ const { Bird } = require('../../models');
 const axios = require("axios")
 
 router.post('/', async (req, res) => {
+  console.log("bird in the house")
   try {
     const newBird = await Bird.create({
       ...req.body,

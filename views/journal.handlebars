@@ -6,24 +6,31 @@
 
 <section id="birdCard">
     <div>
-        {{#each bird}}
+        {{#each birds}}
         {{> bird-details}}
         {{/each}}
     </div>
 </section>
 {{!-- if bird=true then new sighting card offered --}}
-<section class="sightingCard">
-    {{#each sighting}}
+<div class="sightingCard">
+    {{#each sightings}}
     {{> sighting-details}}
     {{/each}}
+</div>  
 
-<form class="api-search">
-    <input type="search" name="search" id="search-field" placeholder="search">
-    <input type="submit" id="apiSubmitBtn" placeholder="Search">
-</form>
+<div class="api-section">
+    <form class="api-search">
+        <input type="search" name="search" id="search-field" placeholder="search">
+        <input type="submit" id="apiSubmitBtn" placeholder="Search">
+    </form>
+    <div class="refresh-output">
+        <button id="refreshApiBtn">Refresh Search</button>
+        <div id="apiDetails"></div>
+    </div>
+</div>
 
 {{> birdForm-details}}
-<div id="apiDetails"></div>
+
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/js/animalsAPI.js" type="text/javascript"></script>
