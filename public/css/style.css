@@ -36,10 +36,14 @@ body {
 
 /* This is for the bird details given by the ANIMALS API */
 #api-card {
-    color: var(--lightType);
-    background-color: var(--opacity);
+    color: rgb(66, 66, 66);
+    background-color: var(--lightType);
     padding: 1rem;
     margin-bottom: 1rem;
+    width: 75vw;
+    margin: auto;
+    border-radius: 1%;
+    margin-top: 2%;
 }
 
 /* For the Nav Bar */
@@ -62,13 +66,6 @@ body {
 /* This is the ENTIRE "Bird Brain" header object */
 #titleHeader {
     padding: 18%;
-}
-
-#api-card {
-    width: 75vw;
-    margin: auto;
-    border-radius: 1%;
-    margin-top: 2%;
 }
 
 /* For the "login" button on the LOGIN PAGE */
