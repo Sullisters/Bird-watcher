@@ -27,6 +27,7 @@ newBird.addEventListener("submit", async event => {
     }) 
     if (res.ok) {
        console.log("yessss")
+       location.reload();
     } else {
         alert("Try again!")
     }
