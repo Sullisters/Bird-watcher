@@ -64,12 +64,20 @@ router.get("/journal/:id", (req,res)=>{
     });
     const newBird = Bird.findAll().then(birds =>{
         const birdHbsData = birds.map(birds=>birds.get({plain:true}))
-        res.render("journal", {birds:birdHbsData})
+        res.render("journal", {birds:birdHbsData})    
     })
-    // .then (location =>{
-    //     location.reload()
-    // })
 })
+router.get("/birds/:id", (req,res)=>{
+    console.log("Are we putting a bird on it?")
+    Bird.findByPk(req.params.id);
+    const newImage = Bird.findByPk().then(birdPic =>{
+        const birdPicHbsData = birdPic.map(birdPic=>birdPic.get({plain:true}))   
+        res.render("journal", {birdPic:birdPicHbsData})    
+    })
+})
+
+
+    
 
  
 //  router.get("/bird-details/:id"), (req,res)=>{
@@ -83,15 +91,15 @@ router.get("/journal/:id", (req,res)=>{
 //      })
 //  }
  
-//  router.get("/sighting/:id",(req,res)=>{
-//      Bird.findByPk(req.params.id,{
-//          include: [Sighting]
-//      });
-//      const newSighting = Sighting.findAll().then(sightings =>{
-//         const sightingHbsData = sightings.map(sightings=>sightings.get({plain:true}))
-//         res.render("journal",{sightings:sightingHbsData})
-//      })
-//  })
+ router.get("/sighting/:id",(req,res)=>{
+     Bird.findByPk(req.params.id,{
+         include: [Sighting]
+     });
+     const newSighting = Sighting.findAll().then(sightings =>{
+        const sightingHbsData = sightings.map(sightings=>sightings.get({plain:true}))
+        res.render("journal",{sightings:sightingHbsData})
+     })
+ })
  
  router.get("/sessions", (req, res) => {
      res.json(req.session);

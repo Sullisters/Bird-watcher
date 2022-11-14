@@ -1,4 +1,4 @@
-// // TODO: add apiKey to .env file
+// // // TODO: add apiKey to .env file
 
 // const apiKey = "AIzaSyB6GAa0r8e6gYLVggfPbQsuhDbygtnKaZg";
 // const locationX = document.getElementById("getSighting");
