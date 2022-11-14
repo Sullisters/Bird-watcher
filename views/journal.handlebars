@@ -2,16 +2,20 @@
 <h4>{{location}}on {{date}}</h4>
 <h5>The weather was: {{weather}}</h5>
 
-<img src="{{bird.image_url}}">
+
 <div class="api-section">
     <form class="api-search">
-        <input type="search" name="search" id="search-field" placeholder="search">
+        <input type="search" name="search" id="search-field" placeholder="Know your bird? Search for some cool facts!">
         <input type="submit" id="apiSubmitBtn" placeholder="Search">
     </form>
     <div class="refresh-output">
         <button id="refreshApiBtn">Refresh Search</button>
         <div id="apiDetails"></div>
     </div>
+</div>
+
+<div class="container">
+{{> birdForm-details}}
 </div>
 
 <section id="birdCard">
@@ -27,12 +31,9 @@
 </div>  
 </section>
 
-
-
-{{> birdForm-details}}
-
-{{!-- 
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>   --}}
+<script src="/js/cloudinary2.js"></script>
+{{!-- <script src="/js/cloudinary1.js"></script> --}}
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/js/animalsAPI.js" type="text/javascript"></script>
 <script src="/js/newBird.js"></script>
 {{!-- <script src="/js/sighting-get.js"></script>
