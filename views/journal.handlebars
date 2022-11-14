@@ -8,12 +8,17 @@
 <div class="api-section">
     <form class="api-search row justify-content-center">
         <input class="form-control w-50 opacity-75 mb-2" type="search" name="search" id="search-field" placeholder="Know your bird? Search for some cool facts!">
-        <div class="btn-group w-75 btn-group-sm">
-        <input class="btn btn-outline-light" type="submit" id="apiSubmitBtn" placeholder="Search">
-        <button class="refresh-output btn btn-outline-light" id="refreshApiBtn">Refresh Search</button>
-    </div>
-        <div class="refresh-output" id="apiDetails"></div>
+        {{!-- this group houses the "submit query" and "refresh search" buttons --}}
+        <div class="btn-group w-75">
+            <input class="btn btn-outline-light" type="submit" id="apiSubmitBtn" placeholder="Search">
+            <button class="btn btn-outline-light" id="refreshApiBtn">Refresh Search</button>
+        </div>
     </form>
+    {{!-- this div exists to refresh the #apiDetails --}}
+    <div class="refresh-output">
+    {{!-- this is specifically for the api returned bird information --}}
+    <div id="apiDetails"></div>
+    </div>
 </div>
 
 <div class="container">
