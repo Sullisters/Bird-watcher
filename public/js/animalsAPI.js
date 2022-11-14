@@ -52,6 +52,7 @@ function startSearch(event) {
 
 
     function refreshApi(){
+            // document.getElementById("refreshApiBtn").reset();
        container.replaceChildren();
     }
     
