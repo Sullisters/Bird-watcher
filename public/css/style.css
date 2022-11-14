@@ -64,6 +64,13 @@ body {
     padding: 18%;
 }
 
+#api-card {
+    width: 75vw;
+    margin: auto;
+    border-radius: 1%;
+    margin-top: 2%;
+}
+
 /* For the "login" button on the LOGIN PAGE */
 /* #loginBtn {
     margin-left: -6vw;
