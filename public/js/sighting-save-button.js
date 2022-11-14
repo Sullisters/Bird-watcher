@@ -1,4 +1,4 @@
-//  // Thisis Saving the found location via map URL to the database
+
        
 //  const button = document.getElementById('saveMap').addEventListener('submit', async _ => {
 //      try {     
@@ -12,3 +12,4 @@
 //             res.status(400).json(err)
 //          }
 //         });
+//  // This is Saving the found location via map URL to the database
