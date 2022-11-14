@@ -26,6 +26,25 @@ router.post('/', async (req, res) => {
     }
   })
 
+//   router.put("/events",(req,res)=>{
+//     if(!req.session.logged_in){
+//         return res.redirect("/login")
+//     }
+//     Event.update({
+//         event_image: req.body.event_image},{
+//           include: [Bird],
+//         where: {
+//             id: req.session.event_id
+//         },
+//     }).then(data=>{
+//         if(!data) {
+//             res.status(404).json({msg: `Upload unsuccessful!`})
+//           }
+//         console.log(data)
+//         res.render("journal", data);
+//     })
+// })
+
   router.delete('/:id', async (req, res) => {
     try {
       const eventData = await Event.destroy({
