@@ -27,6 +27,25 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.put('/:id', async (req,res) => {
+  try {
+    const newPic = await Bird.update({
+      bird_image: req.body.bird_image},{
+       where: {
+        id: req.session.bird_id
+       }, 
+      });
+  catch 
+  data=>{
+        if(!data){
+          res.status(404).json({msg:'uh oh'})
+        }
+        console.log(data)
+        res.render("journal",data)
+      })
+    }
+  })   
+
 router.delete('/:id', async (req, res) => {
   try {
     const birdData = await Bird.destroy({
