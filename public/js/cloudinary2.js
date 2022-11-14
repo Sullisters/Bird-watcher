@@ -1,6 +1,7 @@
 const apiKey = `289214219512654`;
 const cloudName = `df4asanhm`;
 
+
 // cloudinary put request
 const myWidget = cloudinary.createUploadWidget({
     cloudName: cloudName, 
@@ -18,6 +19,9 @@ const myWidget = cloudinary.createUploadWidget({
             },
             
         })
+        // const saveImageToDiv = fetch(body);
+        // const letsDoThis = saveImageToDiv.json();
+        // return letsDoThis
       }
 });
 

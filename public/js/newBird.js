@@ -15,7 +15,7 @@ newBird.addEventListener("submit", async event => {
         location: document.querySelector('#birdLocation').value,
         activity: document.querySelector('#birdActivity').value,
         description: document.querySelector('#birdNotes').value,
-        bird_image: document.querySelector('#birdCardImage').value,
+        // add in a variable in here for the cloudinary link 
     }
     console.log(JSON.stringify(birdObj))
     const res = await fetch("/api/birds/", {

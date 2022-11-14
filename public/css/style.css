@@ -35,11 +35,15 @@ body {
 /* ID SECTION */
 
 /* This is for the bird details given by the ANIMALS API */
-#api-card {
+.api-card {
     color: var(--lightType);
     background-color: var(--opacity);
     padding: 1rem;
     margin-bottom: 1rem;
+    width: 75vw;
+    margin: auto;
+    border-radius: 1%;
+    margin-top: 2%;
 }
 
 /* For the Nav Bar */
@@ -64,12 +68,7 @@ body {
     padding: 18%;
 }
 
-#api-card {
-    width: 75vw;
-    margin: auto;
-    border-radius: 1%;
-    margin-top: 2%;
-}
+
 
 /* For the "login" button on the LOGIN PAGE */
 /* #loginBtn {
