@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Event } = require('../../models');
+const { Event, Bird } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
@@ -18,6 +18,19 @@ router.post('/', async (req, res) => {
   router.get('/', async (req, res) => {
     try {
       const events = await Event.findAll()
+      res.status(200).json(events);
+    } catch (err) {
+      console.log(err)
+      res.status(400).json(err);
+  
+    }
+  })
+
+  router.get('/:id', async (req, res) => {
+    try {
+      const events = await Event.findByPk(req.params.id, {
+        include: [Bird]
+      })
       res.status(200).json(events);
     } catch (err) {
       console.log(err)

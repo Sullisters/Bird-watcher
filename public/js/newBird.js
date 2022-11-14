@@ -1,5 +1,7 @@
 const newBird = document.querySelector('#birdInput');
 
+console.log(window.location.href.split("/")[4])
+
 newBird.addEventListener("submit", async event => {
     event.preventDefault();
 
@@ -15,6 +17,7 @@ newBird.addEventListener("submit", async event => {
         location: document.querySelector('#birdLocation').value,
         activity: document.querySelector('#birdActivity').value,
         description: document.querySelector('#birdNotes').value,
+        EventId: window.location.href.split("/")[4]
         // add in a variable in here for the cloudinary link 
     }
     console.log(JSON.stringify(birdObj))
