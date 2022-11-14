@@ -4,7 +4,13 @@ const sequelize = require('../config/connection');
 class Event extends Model {};
 
 Event.init(
-    {
+    {   date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            validate:{
+                isDate:true,
+            }
+        },
         location: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -13,21 +19,11 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            validate:{
-                isDate:true,
-            }
-        },
         description: {
             type: DataTypes.STRING(50),
         },
-        event_url: {
+        event_image: {
             type:DataTypes.STRING,
-            validate: {
-                isURL: true,
-            }
         },
     },
     {

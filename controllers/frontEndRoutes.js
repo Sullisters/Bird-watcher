@@ -66,40 +66,32 @@ router.get("/journal/:id", (req,res)=>{
         const birdHbsData = birds.map(birds=>birds.get({plain:true}))
         res.render("journal", {birds:birdHbsData})
     })
+    // .then (location =>{
+    //     location.reload()
+    // })
 })
 
-// router.get("/journal/:id",(req,res)=>{
-//     Event.findByPk(req.params.id,{
-//      include: [Bird]
-//     }).then(bird=>{
-//      const birdHbsData = bird.get({plain:true});
-//      console.log("yayyyyy");
-//      console.log(birdHbsData);
-//      res.render("journal",birdHbsData);
+ 
+//  router.get("/bird-details/:id"), (req,res)=>{
+//      Bird.findByPk(req.params.id,{
+//          include: [sighting]
+//      }).then(bird =>{
+//          const birdHbsData = bird.map(bird=>bird.get({plain:true}));
+//          console.log(bird);
+//          console.log(birdHbsData);
+//          res.render("journal", birdHbsData);
+//      })
+//  }
+ 
+//  router.get("/sighting/:id",(req,res)=>{
+//      Bird.findByPk(req.params.id,{
+//          include: [Sighting]
+//      });
+//      const newSighting = Sighting.findAll().then(sightings =>{
+//         const sightingHbsData = sightings.map(sightings=>sightings.get({plain:true}))
+//         res.render("journal",{sightings:sightingHbsData})
 //      })
 //  })
- 
- router.get("/bird-details/:id"), (req,res)=>{
-     Bird.findByPk(req.params.id,{
-         include: [sighting]
-     }).then(bird =>{
-         const birdHbsData = bird.map(bird=>bird.get({plain:true}));
-         console.log(bird);
-         console.log(birdHbsData);
-         res.render("journal", birdHbsData);
-     })
- }
- 
- router.get("/sighting/:id",(req,res)=>{
-     Sighting.findByPk(req.params.id,{
-         include: [Bird]
-     }).then(sighting=>{
-         const sightingHbsData = sighting.map(sighting => sighting.get({plain:true}));
-         console.log(sighting);
-         console.log(sightingHbsData);
-         res.render("journal", sightingHbsData)
-     })
- })
  
  router.get("/sessions", (req, res) => {
      res.json(req.session);
