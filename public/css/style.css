@@ -26,8 +26,8 @@ body {
 .login-form:after {
     content: "";
     display: block;
-    padding-bottom: 85%;
 }
+
 
 /* For the "Bird Brain" type block above the login info on LOGIN PAGE */
 

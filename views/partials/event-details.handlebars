@@ -1,14 +1,15 @@
-<section class="event card">
-    <a href="/journal/{{id}}">
-    <ul>
-        <li>{{date}}</li>
-        <li>{{location}}</li>
-        <li>{{weather}}</li>
-        <li>{{description}}</li>
-        
+<section class="event card mb-2 opacity-75">
+    <a href="/journal/{{id}}" class="text-decoration-none">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item  list-group-item-action">{{date}}</li>
+        <li class="list-group-item list-group-item-action">{{location}}</li>
+        <li class="list-group-item list-group-item-action">{{location}}</li>
+        <li class="list-group-item">{{weather}}</li>
+        <li class="list-group-item list-group-item-action">{{location}}</li>
+        <li class="list-group-item ">{{description}}</li> 
     </ul>
     </a>
-    <button class="delete-event-button">Delete</button>
+    <button class="delete-event-button btn btn-outline-danger m-1">Delete</button>
 </section>
 {{!-- need a new event button with a post request and form with inputs, as well as a save --}}
 {{!-- need an edit button that connects to a put request in a 'public' folders js file --}}

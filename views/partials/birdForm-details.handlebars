@@ -1,34 +1,50 @@
+<div class="accordion w-75 mx-auto pt-3">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Expand this to input data!
+      </button>
+    </h2>
 
-    
-    <form id="birdInput">
-    
-    <input type="text" name="birdName" id="birdName" placeholder="Common Name">
-    
-    <input type="text" name="birdSpecies" id="birdSpecies" placeholder="Latin Name or Species">
-    
-    <input type="text" name="birdColors" id="birdColors" placeholder="What Color/s was the bird?">
-    
-    <input type="text" name="birdSize" id="birdSize" placeholder="Size?">
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul class="list-group">
 
-    <input type="text" name="birdWeight" id="birdWeight" placeholder="Weight?">
+            <form id="birdInput">
+            
+            <input class="list-group-item form-control" type="text" name="birdName" id="birdName" placeholder="Common Name">
+            
+            <input class="list-group-item form-control" type="text" name="birdSpecies" id="birdSpecies" placeholder="Latin Name or Species">
+            
+            <input class="list-group-item form-control" type="text" name="birdColors" id="birdColors" placeholder="What Color/s was the bird?">
+            
+            <input class="list-group-item form-control" type="text" name="birdSize" id="birdSize" placeholder="Size?">
 
-    <input type="text" name="birdDiet" id="birdDiet" placeholder="What was the bird eating?">
-    
-    <input type="text" name="birdMigration" id="birdMigration" placeholder="What is its migratory path?">
+            <input class="list-group-item form-control" type="text" name="birdWeight" id="birdWeight" placeholder="Weight?">
 
-    <input type="text" name="birdHabitat" id="birdHabitat" placeholder="What is its habitat?">
+            <input class="list-group-item form-control" type="text" name="birdDiet" id="birdDiet" placeholder="What was the bird eating?">
+            
+            <input class="list-group-item form-control" type="text" name="birdMigration" id="birdMigration" placeholder="What is its migratory path?">
 
-    <input type="text" name="birdLocation" id="birdLocation" placeholder="Where does it live?">
-    
-    <input type="text" name="birdActivity" id="birdActivity" placeholder="What was it doing?">
-    
-    <input type="text" name="birdNotes" id="birdNotes" placeholder="Any extra notes? (i.e. What was it doing, did it have any unique markings for later identification like the color of ring around its eyes, or foot color?)">
-    
-    <input type="file" id="birdCardImage" placeholder="Upload your bird media file here">
-    
-    <input type="submit" name="birdSubmit"id="birdSubmit">
-    </form>
-    <button id="upload_widget" class="cloudinary-button">Add Image</button>
+            <input class="list-group-item form-control" type="text" name="birdHabitat" id="birdHabitat" placeholder="What is its habitat?">
+
+            <input class="list-group-item form-control" type="text" name="birdLocation" id="birdLocation" placeholder="Where does it live?">
+            
+            <input class="list-group-item form-control" type="text" name="birdActivity" id="birdActivity" placeholder="What was it doing?">
+            
+            <input class="list-group-item form-control" type="text" name="birdNotes" id="birdNotes" placeholder="Any extra notes? (i.e. What was it doing, did it have any unique markings for later identification like the color of ring around its eyes, or foot color?)">
+            
+            <input class="list-group-item form-control" type="submit" name="birdSubmit"id="birdSubmit">
+            </form>
+            <button id="upload_widget" class="cloudinary-button list-group-item">Add Image</button>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
        <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
        <script src="/js/Cloudinary.js"></script>
     
