@@ -4,6 +4,8 @@ const cloudName = `df4asanhm`;
 // cloudinary put request
 const myWidget = cloudinary.createUploadWidget({
     cloudName: cloudName, 
+    theme: "purple",
+    cropping: true,
     uploadPreset: 'w7sz2h8r'}, (error, result) => { 
       if (!error && result && result.event === "success") { 
         console.log('WE PUT A BIRD ON IT', result.info.path); 
