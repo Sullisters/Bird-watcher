@@ -26,8 +26,8 @@ body {
 .login-form:after {
     content: "";
     display: block;
-    padding-bottom: 85%;
 }
+
 
 /* For the "Bird Brain" type block above the login info on LOGIN PAGE */
 
@@ -62,6 +62,13 @@ body {
 /* This is the ENTIRE "Bird Brain" header object */
 #titleHeader {
     padding: 18%;
+}
+
+#api-card {
+    width: 75vw;
+    margin: auto;
+    border-radius: 1%;
+    margin-top: 2%;
 }
 
 /* For the "login" button on the LOGIN PAGE */
