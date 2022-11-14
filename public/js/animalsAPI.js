@@ -52,8 +52,8 @@ function startSearch(event) {
 
 
     function refreshApi(){
-            document.getElementById("refreshApiBtn").reset();
-    //    container.replaceChildren();
+            // document.getElementById("refreshApiBtn").reset();
+       container.replaceChildren();
     }
     
     refresh.addEventListener("click", refreshApi)
