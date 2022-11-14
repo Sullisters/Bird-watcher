@@ -49,5 +49,3 @@ Bird.init(
 );
 
 module.exports = Bird;
-
-module.exports = Bird;
