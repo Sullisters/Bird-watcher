@@ -1,6 +1,8 @@
 const apiKey = `289214219512654`;
 const cloudName = `df4asanhm`;
 
+const pictureLink = "";
+
 
 // cloudinary put request
 const myWidget = cloudinary.createUploadWidget({

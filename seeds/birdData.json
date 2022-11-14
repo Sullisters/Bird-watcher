@@ -6,7 +6,8 @@
 	  "bird_colors": "Blue with White bellies",
 	  "bird_size": "medium",
 	  "bird_diet": "seeds",
-	  "migration": "Eastern US"
+	  "migration": "Eastern US",
+    "EventId": 1
   },
   {
     "name": "Cardinal",
@@ -15,6 +16,8 @@
 	  "bird_colors": "Bright Red",
 	  "bird_size": "medium",
 	  "bird_diet": "seeds",
-	  "migration": "Eastern US"
+	  "migration": "Eastern US",
+    "EventId": 1
+
   }
 ]

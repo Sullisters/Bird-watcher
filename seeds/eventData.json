@@ -1,0 +1,16 @@
+[
+    { 
+      "UserId":1,
+      "date":"2009-02-14",
+      "location": "Central Park",
+      "weather": "Sunny",
+      "description": "wow"
+    },
+    {  
+      "UserId":1,  
+      "date":"2009-09-14",
+      "location": "Second Event",
+      "weather": "Sunny",
+      "description": "wow"
+    }
+  ]

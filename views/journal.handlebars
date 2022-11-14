@@ -1,8 +1,8 @@
 
 
 
-<h4>{{event_location}}on {{event_date}}</h4>
-<h5>The weather was: {{event_weather}}</h5>
+<h4>{{event.location}}on {{event.date}}</h4>
+<h5>The weather was: {{event.weather}}</h5>
 
 
 <div class="api-section">
@@ -10,7 +10,7 @@
         <input class="form-control w-50 opacity-75 mb-2" type="search" name="search" id="search-field" placeholder="Know your bird? Search for some cool facts!">
         <div class="btn-group w-75 btn-group-sm">
         <input class="btn btn-outline-light" type="submit" id="apiSubmitBtn" placeholder="Search">
-        <button class="refresh-output btn btn-outline-light" id="refreshApiBtn">Refresh Search</button>
+        <button class="refreshApibtn btn btn-outline-light" id="refreshApiBtn">Refresh Search</button>
     </div>
         <div class="refresh-output" id="apiDetails"></div>
     </form>
@@ -22,7 +22,7 @@
 
 <section id="birdCard">
     <div>
-        {{#each birds}}
+        {{#each event.Birds}}
         {{> bird-details}}
         {{/each}}
     </div>
