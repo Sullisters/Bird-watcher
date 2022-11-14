@@ -3,6 +3,7 @@ const { Bird } = require('../../models');
 const axios = require("axios")
 
 router.post('/', async (req, res) => {
+  console.log("bird in the house")
   try {
     const newBird = await Bird.create({
       ...req.body,
@@ -25,6 +26,22 @@ router.get('/', async (req, res) => {
 
   }
 })
+
+router.put('/:id', (req,res) => {
+  console.log("we're talkin' here")
+  Bird.update({
+    bird_image: req.body.bird_image},{
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    }).then(data =>{
+      if(!data) {
+        res.status(404).json({msg: "Whoops, try again!"})
+      }
+      res.render("journal", data)
+    })
+  })   
 
 router.delete('/:id', async (req, res) => {
   try {

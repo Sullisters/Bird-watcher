@@ -1,15 +1,24 @@
+{{!-- TODO: Still need the CLOUDINARY blue button to be styled. Final layout TO BE DETERMINED --}}
+    <section class="birdCard">
+        
+        <img src="https://res.cloudinary.com/df4asanhm/image/upload/w_200,h_300,c_fill,q_100/{{bird_image}}">
+        <ul class="list-group list-group-flush w-75 mx-auto rounded opacity-75">
+            <li class="list-group-item">Common Name: {{name}}</li>
+            <li class="list-group-item">Bird Species/Latin Name: {{bird_species}}</li>
+            <li class="list-group-item">Bird Colors: {{bird_colors}}</li>
+            <li class="list-group-item">Size:{{bird_size}}</li>
+            <li class="list-group-item">Weight: {{weight}}</li>
+            <li class="list-group-item">Diet: {{bird_diet}}</li>
+            <li class="list-group-item">Migration: {{migration}}</li>
+            <li class="list-group-item">Habitat: {{habitat}}</li>
+            <li class="list-group-item">Location: {{location}}</li>
+            <li class="list-group-item">Activity: {{activity}}</li>
+            <li class="list-group-item">Notes: {{description}}</li>
+            {{!-- <button class="btn btn-outline-light btn-sm mt-2" id="getSighting">Add Your location</button> --}}
+        </ul>
+        {{!-- Add a button to append bird entry that gets Sighting --}}
+        {{!-- <button id="getSighting">Add Your location</button> --}}
+        
 
-{{!-- for each bird --}}
-    {{!-- picture upload --}}
-    {{!-- <input type="file" id="image">{{bird.image}} --}}
-    {{!-- input name --}}
-    <input type=""
-    {{!-- input date_created --}}
-    {{!-- input  bird_species--}}
-    {{!-- input bird_colors --}}
-   
-    {{!-- input bird_size --}}
-    {{!-- input bird_diet --}}
-    {{!-- input migration --}}
-    {{!-- input description --}} 
-    {{!-- input activity --}}
+    </section>
+   <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
