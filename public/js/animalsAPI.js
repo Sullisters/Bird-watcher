@@ -31,6 +31,7 @@ function startSearch(event) {
                 <hr>
                 <h4>Common Name: ${bird.common_name}</h4>
                 <h4>Diet: ${bird.diet}</h4>
+                <h4>Color: ${bird.color}</h4>
                 <h4>Habitat: ${bird.habitat}</h4>
                 <h4>Weight: ${bird.weight}</h4>
                 <h4>Location: ${bird.location}</h4>
