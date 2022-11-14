@@ -1,17 +1,61 @@
 
+<script>
+        (function(d, s, id) {
+            if (d.getElementById(id)) {
+                if (window.__TOMORROW__) {
+                    window.__TOMORROW__.renderWidget();
+                }
+                return;
+            }
+            const fjs = d.getElementsByTagName(s)[0];
+            const js = d.createElement(s);
+            js.id = id;
+            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="IMPERIAL"
+           data-skin="dark"
+           data-widget-type="upcoming"
+           style="padding-bottom:22px;position:relative;"
+        >
+          <a
+            href="https://www.tomorrow.io/weather-api/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by the Tomorrow.io Weather API"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="250"
+              height="18"
+            />
+          </a>
+        </div>
+
 <h4>{{location}}on {{date}}</h4>
 <h5>The weather was: {{weather}}</h5>
 
-<img src="{{bird.image_url}}">
+
 <div class="api-section">
-    <form class="api-search">
-        <input type="search" name="search" id="search-field" placeholder="search">
-        <input type="submit" id="apiSubmitBtn" placeholder="Search">
-    </form>
-    <div class="refresh-output">
-        <button id="refreshApiBtn">Refresh Search</button>
-        <div id="apiDetails"></div>
+    <form class="api-search row justify-content-center">
+        <input class="form-control w-50 opacity-75 mb-2" type="search" name="search" id="search-field" placeholder="Know your bird? Search for some cool facts!">
+        <div class="btn-group w-75 btn-group-sm">
+        <input class="btn btn-outline-light" type="submit" id="apiSubmitBtn" placeholder="Search">
+        <button class="btn btn-outline-light" id="refreshApiBtn">Refresh Search</button>
     </div>
+        <div id="apiDetails"></div>
+    </form>
+</div>
+
+<div class="container">
+{{> birdForm-details}}
 </div>
 
 <section id="birdCard">
@@ -21,18 +65,15 @@
         {{/each}}
     </div>
     <div class="sightingCard">
-    {{#each sightings}}
-    {{> sighting-details}}
-    {{/each}}
-</div>  
+        {{#each sightings}}
+        {{> sighting-details}}
+        {{/each}}
+    </div>  
 </section>
 
-
-
-{{> birdForm-details}}
-
-{{!-- 
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>   --}}
+<script src="/js/cloudinary2.js"></script>
+{{!-- <script src="/js/cloudinary1.js"></script> --}}
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/js/animalsAPI.js" type="text/javascript"></script>
 <script src="/js/newBird.js"></script>
 {{!-- <script src="/js/sighting-get.js"></script>

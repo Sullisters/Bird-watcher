@@ -1,22 +1,32 @@
 <section class="dashboard-container">
-    <h1>Welcome back {{User.name}}!</h1>
-    <div>
-    <h3 class="events">Your entries:</h3>
+        <h1 class="d-flex justify-content-center">Welcome back {{User.name}}!</h1>
+        <h3 class="events d-flex justify-content-center">Your entries:</h3>
 
-    <form action="" class="addEvent">
-        <input type="date" name="eventDate" id="eventDate">
-        <input type="text" name="eventLocation" id="eventLocation">
-        <input type="text" name="eventWeather" id="eventWeather">
-        <input type="text" name="eventDescription" id="eventDescription">
-        <input type="submit" name="event-submit" id="eventSubmitButton">
+    <form action="" class="addEvent container">
+        <div class="row">
+            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="text" name="eventLocation" id="eventLocation">
+        </div>
+        <div class="row">
+            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="text" name="eventWeather" id="eventWeather">
+        </div>
+        <div class="row">
+            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="date" name="eventDate" id="eventDate">
+        </div>
+        <div class="row">
+            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="text" name="eventDescription" id="eventDescription">
+        </div>
+        <div class="row">
+            <input class="btn btn-outline-light form-control w-50 mx-auto mb-3" type="submit" name="event-submit" id="eventSubmitButton">
+        </div>
     </form>
 
 {{!-- going to need a db.query in my route --}}
-    <section class="events-container">
+    <section class="events-container w-50 mx-auto opacity-75">
             {{#each events}}
                    {{> event-details}}
             {{/each}}
     </section>
+
     {{!-- <section class="friends-container">
         <a href="friend/event/{{id}}">
         {{#each friend as |friend|}}
