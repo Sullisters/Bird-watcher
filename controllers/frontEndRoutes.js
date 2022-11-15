@@ -58,15 +58,36 @@ router.get("/events",(req,res)=>{
     })
 })
 
+router.get("/events/:id",(req,res)=>{
+    if (!req.session.logged_in){
+        return res.redirect("/login")
+    } 
+   Event.findByPk().then(events=>{
+    const eventsHbsData = events.get({plain:true})
+    res.render("journal", {events:eventsHbsData})
+    })
+})
+
 router.get("/journal/:id", (req,res)=>{
     Event.findByPk(req.params.id,{
         include:[Bird]
+    }).then(foundEvent => {
+        const event = foundEvent.get({plain: true})
+        console.log
+        res.render("journal", {event})    
     });
-    const newBird = Bird.findAll().then(birds =>{
-        const birdHbsData = birds.map(birds=>birds.get({plain:true}))
-        res.render("journal", {birds:birdHbsData})    
-    })
 })
+
+// router.get("/journal/:id", (req,res)=>{
+//     Event.findByPk(req.params.id,{
+//         include:[Bird]
+//     });
+//     const newBird = Bird.findAll().then(birds =>{
+//         const birdHbsData = birds.map(birds=>birds.get({plain:true}))
+//         res.render("journal", {birds:birdHbsData})    
+//     })
+// })
+
 router.get("/birds/:id", (req,res)=>{
     console.log("Are we putting a bird on it?")
     Bird.findByPk(req.params.id);

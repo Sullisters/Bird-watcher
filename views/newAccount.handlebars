@@ -1,13 +1,21 @@
 
 <section class="new-user-card">
 
-    <form id="signup-form">
-        <input type="email" name="signupEmail" id="signupEmail" placeholder="User E-mail">
-        <input type="text" name="signupName" id="signupName" placeholder="Username">
-        <input type="password" name="signupPassword" id="signupPassword" placeholder="Password">
-        {{!-- <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"> --}}
-        {{!-- <input type="submit" name="submitNewuser" id="submitNewUser"> --}}
-        <button>Create New newAccount</button>
+    <form id="signup-form" class="rounded mx-auto">
+        <div class="row">
+            <input class="mt-2 form-control" type="email" name="signupEmail" id="signupEmail" placeholder="User E-mail">
+        </div>
+        <div class="row">
+            <input class="mt-2 form-control" type="text" name="signupName" id="signupName" placeholder="Username">
+        </div>
+        <div class="row">
+            <input class="mt-2 form-control" type="password" name="signupPassword" id="signupPassword" placeholder="Password">
+        </div>
+            {{!-- <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"> --}}
+            {{!-- <input type="submit" name="submitNewuser" id="submitNewUser"> --}}
+        <div class="row">
+            <button class="btn btn-outline-light mt-2">Create New Account</button>
+        </div>
     </form>
 </section>
 <script src="/js/newAccount.js"></script>
