@@ -20,6 +20,10 @@ body {
     margin-bottom: 1rem;
 }
 /* CLASS SECTION */
+.imageCard {
+    background-color: var(--opacity);
+}
+
 .login-form {
     background-color: var(--opacity);
     padding: 1rem;
@@ -82,6 +86,13 @@ body {
 /* This is the ENTIRE "Bird Brain" header object */
 #titleHeader {
     padding: 18%;
+}
+
+#signup-form {
+    background-color: var(--opacity);
+    padding: 1rem;
+    margin-top: 5vh;
+    width: 40%;
 }
 
 
