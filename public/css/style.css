@@ -14,6 +14,11 @@ body {
     background-size: cover;
 }
 
+#navBar {
+    background-color: var(--opacity);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
 /* CLASS SECTION */
 .login-form {
     background-color: var(--opacity);
@@ -57,12 +62,12 @@ body {
     margin-top: 2%;
 }
 
+/* .birdCard {
+    background-color: rgba(255, 255, 255, 0.842); 
+} */
+
 /* For the Nav Bar */
-#navBar {
-    background-color: var(--opacity);
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-}
+
 
 /* Specific for the size of the "Bird Brain:" title header */
 #birdBrainTitle {
