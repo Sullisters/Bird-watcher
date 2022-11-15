@@ -28,14 +28,23 @@ function startSearch(event) {
         const html = [data[0].characteristics].map(bird => {
             return `
             <div class="api-card">
-                <hr>
-                <h4>Common Name: ${bird.common_name}</h4>
-                <h4>Diet: ${bird.diet}</h4>
-                <h4>Color: ${bird.color}</h4>
-                <h4>Habitat: ${bird.habitat}</h4>
-                <h4>Weight: ${bird.weight}</h4>
-                <h4>Location: ${bird.location}</h4>
-                </div>
+                <dl class="row">
+                    <hr>
+                    <dt class="col-sm-3">Common Name:</dt> <dd class="col-sm-9"><p>${bird.common_name}</p></dd>
+                    <dt class="col-sm-3">Number of Species:</dt> <dd class="col-sm-9"><p>${bird.number_of_species}</p></dd>
+                    <dt class="col-sm-3">Diet:</dt> <dd class="col-sm-9"><p>${bird.diet}</p></dd>
+                    <dt class="col-sm-3">Color:</dt> <dd class="col-sm-9"><p>${bird.color}</p></dd>
+                    <dt class="col-sm-3">Weight:</dt> <dd class="col-sm-9"><p>${bird.weight}</p></dd>
+                    <dt class="col-sm-3">Top Speed:</dt> <dd class="col-sm-9"><p>${bird.top_speed}</p></dd>
+                    <dt class="col-sm-3">Lifespan:</dt> <dd class="col-sm-9"><p>${bird.lifespan}</p></dd>
+                    <dt class="col-sm-3">Litter Size:</dt> <dd class="col-sm-9"><p>${bird.litter_size}</p></dd>
+                    <dt class="col-sm-3">Habitat:</dt> <dd class="col-sm-9"><p>${bird.habitat}</p></dd>
+                    <dt class="col-sm-3">Predators:</dt> <dd class="col-sm-9"><p>${bird.predators}</p></dd>
+                    <dt class="col-sm-3">Prey:</dt> <dd class="col-sm-9"><p>${bird.prey}</p></dd>
+                    <dt class="col-sm-3">Biggest Threat:</dt> <dd class="col-sm-9"><p>${bird.biggest_threat}</p></dd>
+                    <dt class="col-sm-3">Location:</dt> <dd class="col-sm-9"><p>${bird.location}</p></dd>
+                </dl>
+            </div>
                 `
             })
             document
@@ -58,4 +67,8 @@ function startSearch(event) {
     
     refresh.addEventListener("click", refreshApi)
     
-    
+    // <h6>Diet: ${bird.diet}</h6>
+    //             <h6>Color: ${bird.color}</h6>
+    //             <h6>Habitat: ${bird.habitat}</h6>
+    //             <h6>Weight: ${bird.weight}</h6>
+    //             <h6>Location: ${bird.location}</h6>
