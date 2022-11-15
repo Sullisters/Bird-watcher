@@ -9,13 +9,12 @@
 body {
     background: var(--primary);
     color: var(--lightType);
-    font-family: "Helvetica", sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-image: url("https://i.imgur.com/y5RTHxR.png");
     background-size: cover;
 }
 
 /* CLASS SECTION */
-
 .login-form {
     background-color: var(--opacity);
     padding: 1rem;
@@ -27,19 +26,31 @@ body {
     content: "";
     display: block;
 }
-
+.event-card{
+    color: black;
+    padding: 10px;
+}
 
 /* For the "Bird Brain" type block above the login info on LOGIN PAGE */
 
 
 /* ID SECTION */
+.journal-header {
+    
+    text-align: center;
+    margin: 30px;
+}
+
 
 /* This is for the bird details given by the ANIMALS API */
 .api-card {
+    font-size: small;
+    align-content: center;
     color: var(--lightType);
     background-color: var(--opacity);
     padding: 1rem;
     margin-bottom: 1rem;
+    margin-left: 3rem;
     width: 75vw;
     margin: auto;
     border-radius: 1%;
