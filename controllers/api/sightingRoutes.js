@@ -15,6 +15,17 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.get('/:id', async (req, res) => {
+    try {
+      const sightings = await Sighting.findByPk(req.params.id)
+      res.status(200).json(sightings);
+    } catch (err) {
+      console.log(err)
+      res.status(400).json(err);
+  
+    }
+  })
+
 router.get('/', async (req, res) => {
   try {
     const sightings = await Sighting.findAll()

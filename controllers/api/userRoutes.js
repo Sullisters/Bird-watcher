@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Event } = require('../../models');
 const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
@@ -24,6 +24,20 @@ router.post('/', (req, res) => {
     console.log(err);
     res.status(500).json({ err })
   })
+})
+
+
+router.get('/:id', async (req, res) => {
+  try {
+    const events = await User.findByPk(req.params.id, {
+      include: [Event]
+    })
+    res.status(200).json(events);
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err);
+
+  }
 })
 
 // router.post('/login',(req,res)=>{
