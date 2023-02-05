@@ -39,9 +39,27 @@ body {
     content: "";
     display: block;
 }
+
+.addEvent{
+    background-color:rgba(195, 177, 87, 0.562);
+}
+
+.eventsContainer{
+    background-color:rgba(195, 177, 87, 0.562);
+
+}
+
 .event-card{
-    color: rgb(28, 27, 27);
+    color: rgb(9, 9, 9);
     padding: 10px;
+}
+
+.eventTxt {
+    color: black;
+}
+
+.eventOutput {
+    color: rgba(0, 0, 0, 0.799);
 }
 
 /* For the "Bird Brain" type block above the login info on LOGIN PAGE */
@@ -49,9 +67,12 @@ body {
 
 /* ID SECTION */
 .journal-header {
-    
     text-align: center;
     margin: 30px;
+}
+
+.journalPage {
+    background-color:rgba(195, 177, 87, 0.562);
 }
 
 
@@ -81,7 +102,7 @@ body {
     background-color: rgba(255, 255, 255, 0.842); 
 } */
 
-/* For the Nav Bar */
+
 
 
 /* Specific for the size of the "Bird Brain:" title header */
@@ -105,19 +126,3 @@ body {
     margin-top: 5vh;
     width: 40%;
 }
-
-
-/* For the "login" button on the LOGIN PAGE */
-/* #loginBtn {
-    margin-left: -6vw;
-} */
-
-/* For the "Login:" type on the login page */
-/* #loginType {
-    margin-right: -6vw;
-} */
-
-/* For the "New Account" button on the login page */
-/* #newAccountBtn {
-    margin-top: 1rem;
-} */
