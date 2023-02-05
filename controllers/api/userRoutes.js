@@ -26,27 +26,6 @@ router.post('/', (req, res) => {
   })
 })
 
-// router.post('/login',(req,res)=>{
-//   User.findOne({
-//       where:{
-//           email:req.body.email
-//       }
-//   }).then(foundUser=>{
-//       if(!foundUser){
-//           return res.status(401).json({msg:'user not found'})
-//       }else if(!bcrypt.compareSync(req.body.password,foundUser.password)){
-//           return res.status(401).json({msg:'password incorrect'})
-//       }else{
-//           req.session.userId=foundUser.id;
-//           req.session.loggedIn=true;
-//           res.json(foundUser);
-//       }
-//   }).catch(err=>{
-//       console.log(err);
-//       res.status(500).json({err});
-//   })
-// })
-
 
 router.post('/login', async (req, res) => {
   try {

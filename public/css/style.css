@@ -15,6 +15,9 @@ body {
     background-size: cover;
 }
 
+#titleHeader{
+    text-shadow: 1px 0px 5px;
+}
 #navBar {
     background-color: var(--opacity);
     padding: 0.5rem;
@@ -67,6 +70,13 @@ body {
     margin-top: 2%;
 }
 
+.header-container{
+    color:rgb(8, 8, 8);
+    background-color: rgba(233, 227, 227, 0.621);
+    width:60%;
+    margin-left: 20%;
+    border-radius: 5px;
+}
 /* .birdCard {
     background-color: rgba(255, 255, 255, 0.842); 
 } */
