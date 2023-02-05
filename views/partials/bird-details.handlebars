@@ -3,7 +3,7 @@
         
         <ul class="imageCard list-group list-group-flush w-75 mx-auto rounded opacity-85">
             <div class="mx-auto pb-3 pt-3">
-                <img class="border border-2 border-light rounded-top" src="https://res.cloudinary.com/df4asanhm/image/upload/w_200,h_300,c_fill,q_100/{{bird_image}}">
+                <img class="border border-2 border-light rounded-top" src="https://res.cloudinary.com/df4asanhm/image/upload/w_300,h_300,c_fill,q_100/{{bird_image}}">
             </div>
             <li class="list-group-item">Common Name: {{name}}</li>
             <li class="list-group-item">Bird Species/Latin Name: {{bird_species}}</li>
@@ -16,10 +16,9 @@
             <li class="list-group-item">Location: {{location}}</li>
             <li class="list-group-item">Activity: {{activity}}</li>
             <li class="list-group-item">Notes: {{description}}</li>
-            {{!-- <button class="btn btn-outline-light btn-sm mt-2" id="getSighting">Add Your location</button> --}}
-        </ul>
+            <a class="p-2 text-dark text-decoration-none"href="/sighting/{{id}}">Geolocate your sighting!</a>    
         {{!-- Add a button to append bird entry that gets Sighting --}}
-        {{!-- <button id="getSighting">Add Your location</button> --}}
+        
     
     </section>
    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>

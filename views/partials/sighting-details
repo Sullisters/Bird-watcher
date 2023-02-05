@@ -1,0 +1,12 @@
+<section class="sightingCard">
+
+    <section class="sightingCard pb-3">
+        
+        <ul class="imageCard list-group list-group-flush w-75 mx-auto rounded opacity-75">
+            <div id="mapholder mx-auto pb-3 pt-3">
+                <img class="map_url" src="{{ map_url}}"/>
+            </div>
+            <li class="list-group-item">Sighting notes: {{entry_description}}</li>
+        </ul>
+    
+    </section>

@@ -1,5 +1,6 @@
 const newEvent = document.querySelector(".addEvent");
 
+console.log(window.location.href.split("/"))
 
 newEvent.addEventListener("submit", async event => {
     event.preventDefault();
@@ -9,7 +10,7 @@ newEvent.addEventListener("submit", async event => {
         location: document.querySelector('#eventLocation').value,
         weather: document.querySelector('#eventWeather').value,
         description: document.querySelector('#eventDescription').value, 
-        // eventURL 
+        UserId: window.location.href.split("/")[4], 
     }
     console.log(JSON.stringify(eventObj))
     const res = await fetch("/api/events/", {

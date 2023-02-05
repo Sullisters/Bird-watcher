@@ -22,8 +22,9 @@
     </form>
     <div class="eventsContainer w-75 mx-auto">
 <h4 class="events d-flex justify-content-center">YOUR ENTRIES</h4>
-{{!-- going to need a db.query in my route --}}
+
     <section class="events-container w-50 mx-auto opacity-85">
+
             {{#each events}}
                  {{> event-details}}
             {{/each}}

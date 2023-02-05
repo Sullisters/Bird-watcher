@@ -126,3 +126,28 @@ body {
     margin-top: 5vh;
     width: 40%;
 }
+
+.sightingContainer{
+    /* align-content: center; */
+    width: 50%;
+    background-color: var(--opacity);
+}
+
+.map_url {
+    align-content: center;
+}
+/* For the "login" button on the LOGIN PAGE */
+/* #loginBtn {
+    margin-left: -6vw;
+} */
+
+/* For the "Login:" type on the login page */
+/* #loginType {
+    margin-right: -6vw;
+} */
+
+/* For the "New Account" button on the login page */
+/* #newAccountBtn {
+    margin-top: 1rem;
+} */
+

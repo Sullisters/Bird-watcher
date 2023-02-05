@@ -1,0 +1,21 @@
+<div class="sightingContainer container row row-cols-1 border border-rounded mx-auto text-secondary">
+<button class="col btn btn-outline-light form-control w-50 mx-50 mb-3"id="getSighting">Map your location!</button>  
+
+<div class="col p-4 border"id="mapholder">
+    <img class="map_url"/>
+</div>
+
+<form class="col"> 
+<input type="text" name="entry_description" id="sightingNotes" placeholder="Notes on this sighting">
+<input class="border border-rounded" type="submit" name="submitNewSighting" id="saveMap" placeholder="Save This Sighting">
+</form>
+</div>
+
+<div class="sightingCard">
+    {{#each Sighting}}
+    {{> sighting-details}}
+    {{/each}}
+</div> 
+
+<script src="/js/sighting-get.js"></script>
+<script src="/js/sighting-save.js"></script>
