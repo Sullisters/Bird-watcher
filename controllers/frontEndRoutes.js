@@ -33,7 +33,9 @@ router.get("/users/:id", (req, res) => {
     if (!req.session.logged_in) {
       return res.redirect(`/login`);
     }
-    User.findByPk(req.params.id)
+    User.findByPk(req.params.id, {
+        include:[Event],
+    })
       .then((foundUser) => {
         const hbsUser = foundUser.get({ plain: true });
         console.log(hbsUser);
@@ -47,17 +49,27 @@ router.get("/users/:id", (req, res) => {
   });
 
 
-  router.get("/events",(req,res)=>{
+
+router.get("/events",(req,res)=>{
+
     if (!req.session.logged_in){
         return res.redirect("/login")
     }
-   Event.findAll().then(events=>{
+   Event.findAll({
+    where: {
+        UserId: req.session.user_id
+    }
+   }).then(events=>{
     const eventsHbsData = events.map(event=>event.get({plain:true}))
     res.render("event", {
         events:eventsHbsData
         })
     })
 })
+
+
+
+
 
 router.get("/events/:id",(req,res)=>{
     if (!req.session.logged_in){
@@ -90,15 +102,7 @@ router.get("/sighting/:id", (req,res)=>{
     });
 })
 
-// router.get("/journal/:id", (req,res)=>{
-//     Event.findByPk(req.params.id,{
-//         include:[Bird]
-//     }).then(foundEvent => {
-//         const event = foundEvent.get({plain: true})
-//         console.log
-//         res.render("journal", {event})    
-//     });
-// })
+
  
  router.get("/sessions", (req, res) => {
      res.json(req.session);

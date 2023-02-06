@@ -27,7 +27,7 @@ function startSearch(event) {
         console.log(data[0].taxonomy.scientific_name);
         const html = [data[0].characteristics].map(bird => {
             return `
-            <div class="api-card">
+            <div class="api-card w-50 mx-auto">
                 <dl class="row">
                     <hr>
                     <dt class="col-sm-3">Common Name:</dt> <dd class="col-sm-9"><p>${bird.common_name}</p></dd>

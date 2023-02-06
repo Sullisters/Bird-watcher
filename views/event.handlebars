@@ -1,39 +1,36 @@
 <section class="dashboard-container">
         
-    <h4 class="d-flex justify-content-center">ADD AN OUTING</h4>
+    
 
-    <form action="" class="addEvent container">
+    <form action="" class="addEvent container w-75 mx-auto">
+        <h4 class="d-flex justify-content-center">ADD AN OUTING</h4>
         <div class="row">
-            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="text" name="eventLocation" id="eventLocation" placeholder="Where are you birding today?">
+            <input class="form-control w-50 mx-auto mb-2 opacity-85" type="text" name="eventLocation" id="eventLocation" placeholder="Where are you birding today?">
         </div>
         <div class="row">
-            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="text" name="eventWeather" id="eventWeather" placeholder="What is/was the weather for this outing?">
+            <input class="form-control w-50 mx-auto mb-2 opacity-85" type="text" name="eventWeather" id="eventWeather" placeholder="What is/was the weather for this outing?">
         </div>
         <div class="row">
-            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="date" name="eventDate" id="eventDate">
+            <input class="form-control w-50 mx-auto mb-2 opacity-85" type="date" name="eventDate" id="eventDate">
         </div>
         <div class="row">
-            <input class="form-control w-50 mx-auto mb-2 opacity-75" type="text" name="eventDescription" id="eventDescription" placeholder="Notes to describe this outing?">
+            <input class="form-control w-50 mx-auto mb-2 opacity-85" type="text" name="eventDescription" id="eventDescription" placeholder="Notes to describe this outing?">
         </div>
         <div class="row">
             <input class="btn btn-outline-light form-control w-50 mx-auto mb-3" type="submit" name="event-submit" id="eventSubmitButton">
         </div>
     </form>
+    <div class="eventsContainer w-75 mx-auto">
 <h4 class="events d-flex justify-content-center">YOUR ENTRIES</h4>
 
-    <section class="events-container w-50 mx-auto opacity-75">
+    <section class="events-container w-50 mx-auto opacity-85">
+
             {{#each events}}
-                   {{> event-details}}
+                 {{> event-details}}
             {{/each}}
     </section>
+    </div>
 
-    {{!-- <section class="friends-container">
-        <a href="friend/event/{{id}}">
-        {{#each friend as |friend|}}
-        {{> friend-details}}
-        {{/each}}
-        </a>
-    </section> --}}
     </div>
 </section>
 <script>

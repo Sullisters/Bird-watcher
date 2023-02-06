@@ -1,20 +1,14 @@
-{{!-- TODO: Delete does not destroy the card --}}
-<section class="event-card card mb-2 opacity-75 ">
+
+<section class="event-card card mb-2 opacity-85 ">
     <a href="/journal/{{id}}" class="text-decoration-none text-secondary">
         <dl class="row">
-                    <dt class="col-sm-3">Date of Outing</dt> <dd class="col-sm-9">{{date}}<p></p></dd>
-                    <dt class="col-sm-3">Location</dt> <dd class="col-sm-9"><p>{{location}}</p></dd>
-                    <dt class="col-sm-3">Weather</dt> <dd class="col-sm-9"><p>{{weather}}</p></dd>
-                    <dt class="col-sm-3">Notes</dt> <dd class="col-sm-9"><p>{{description}}</p></dd>
+                    <dt class="eventTxt col-sm-3">Date</dt> <dd class="eventOutput col-sm-9">{{date}}<p></p></dd>
+                    <dt class="eventTxt col-sm-3">Location</dt> <dd class="eventOutput col-sm-9"><p>{{location}}</p></dd>
+                    <dt class="eventTxt col-sm-3">Weather</dt> <dd class="eventOutput col-sm-9"><p>{{weather}}</p></dd>
+                    <dt class="eventTxt col-sm-3">Notes</dt> <dd class="eventOutput col-sm-9"><p>{{description}}</p></dd>
         
         </dl>    
     
-    {{!-- <ul class="list-group list-group-flush">
-        <li class="list-group-item  list-group-item-action">{{date}}</li>
-        <li class="list-group-item list-group-item-action">{{location}}</li>
-        <li class="list-group-item">{{weather}}</li>
-        <li class="list-group-item ">{{description}}</li> 
-    </ul> --}}
     </a>
     {{!-- <button class="delete-event-button btn btn-outline-danger m-1">Delete</button> --}}
 </section>
